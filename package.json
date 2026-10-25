@@ -1,0 +1,16 @@
+{
+  "name": "infiniofertas",
+  "private": true,
+  "type": "module",
+  "description": "Automatic Mercado Libre deals website with affiliate links and Telegram posting.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "fetch": "node scripts/fetch-deals.mjs",
+    "build": "node scripts/build.mjs",
+    "update": "node scripts/fetch-deals.mjs && node scripts/build.mjs",
+    "telegram": "node scripts/post-telegram.mjs",
+    "preview": "node scripts/build.mjs --sample && node scripts/serve.mjs",
+    "serve": "node scripts/serve.mjs",
+    "test": "node --test test/*.test.mjs"
+  }
+}

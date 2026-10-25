@@ -1,0 +1,39 @@
+{
+  "siteName": "InfiniOfertas",
+  "tagline": "Las mejores ofertas y descuentos de Mercado Libre, actualizados automáticamente.",
+  "baseUrl": "https://ofertas.infinistart.com",
+  "customDomain": "ofertas.infinistart.com",
+  "country": "MX",
+
+  "social": {
+    "telegramUrl": "",
+    "whatsappUrl": ""
+  },
+
+  "affiliate": {
+    "params": {
+      "matt_word": "",
+      "matt_tool": ""
+    }
+  },
+
+  "fetch": {
+    "pages": 4,
+    "includeLightning": true,
+    "minDiscount": 15,
+    "maxStoredDeals": 400
+  },
+
+  "deals": {
+    "expireHours": 26,
+    "keepDays": 7,
+    "manualDays": 7,
+    "homeLimit": 120
+  },
+
+  "telegram": {
+    "minDiscount": 25,
+    "maxPerRun": 6,
+    "repostAfterDays": 7
+  }
+}
