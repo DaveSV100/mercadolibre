@@ -11,7 +11,23 @@ const HEADERS = {
 export async function fetchHtml(url) {
   const res = await fetch(url, { headers: HEADERS, redirect: 'follow', signal: AbortSignal.timeout(25000) });
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+  if (res.url !== url) console.log(`  redirected to ${res.url}`);
   return res.text();
+}
+
+// Summary of a page we could not read deals from, so the run log shows what Mercado Libre sent back.
+export function describePage(html) {
+  const count = (re) => (html.match(re) ?? []).length;
+  const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.trim();
+  const at = html.search(/andes-money-amount__fraction|MLM-?\d{6,}|"price"\s*:/);
+  return [
+    `  page: ${html.length} chars, title: ${JSON.stringify(title ?? null)}`,
+    `  markers: poly-card=${count(/poly-card/g)} promotion-item=${count(/promotion-item/g)} ui-search=${count(/ui-search-result/g)}`
+      + ` fraction=${count(/andes-money-amount__fraction/g)} itemIds=${count(/ML[A-Z]-?\d{6,}/g)}`
+      + ` preloaded=${/__PRELOADED_STATE__/.test(html)} nordic=${/_n\.ctx\.r|__NORDIC_RENDERING_CTX__/.test(html)}`
+      + ` ldjson=${count(/application\/ld\+json/g)} captcha=${/captcha|account-verification|suspicious/i.test(html)}`,
+    `  sample: ${JSON.stringify(html.slice(Math.max(0, at - 600), at + 900).replace(/\s+/g, ' '))}`,
+  ].join('\n');
 }
 
 const stripTags = (s) => decodeEntities(String(s).replace(/<[^>]*>/g, ' ')).replace(/\s+/g, ' ').trim();

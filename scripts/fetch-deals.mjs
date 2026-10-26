@@ -1,7 +1,7 @@
 // Updates data/deals.json from Mercado Libre's public deals pages and data/manual.json.
 // Never fails the pipeline: if Mercado Libre can't be read, the previous deals are kept.
 import { categorize, itemIdFromUrl, loadConfig, readJson, writeJson } from './lib/core.mjs';
-import { fetchHtml, parseListingPage, parseProductPage } from './lib/mercadolibre.mjs';
+import { describePage, fetchHtml, parseListingPage, parseProductPage } from './lib/mercadolibre.mjs';
 
 const config = loadConfig();
 const { market } = config;
@@ -38,8 +38,10 @@ if (config.fetch.includeLightning) listingUrls.push(`https://www.${market.domain
 let scraped = 0;
 for (const url of listingUrls) {
   try {
-    const deals = parseListingPage(await fetchHtml(url), market);
+    const html = await fetchHtml(url);
+    const deals = parseListingPage(html, market);
     console.log(`${url} -> ${deals.length} deals`);
+    if (!deals.length) console.log(describePage(html));
     for (const deal of deals) {
       if (deal.discount < config.fetch.minDiscount) continue;
       if (url.includes('lightning')) deal.lightning = true;
