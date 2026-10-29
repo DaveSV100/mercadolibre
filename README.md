@@ -3,7 +3,7 @@
 An automatic Mercado Libre deals website: **ofertas.infinistart.com**.
 
 Every 2 hours, for free, GitHub:
-1. reads Mercado Libre's public deals pages (Ofertas del día + Relámpago),
+1. asks Mercado Libre's official API for discounted products in every category (and the best sellers),
 2. keeps the products with a real discount (15%+ by default),
 3. adds your affiliate tracking to every link,
 4. rebuilds the website (fast, SEO-ready: sitemap, Google product markup, one page per deal and per category),
@@ -50,9 +50,10 @@ No dependencies to install; only Node.js 20+.
 
 ## Good to know
 
-- There is no Mercado Libre affiliate API. The site reads the public deals pages a few times a day. If Mercado Libre
-  blocks GitHub's servers or changes its page layout, the run keeps the previous deals and logs a warning
-  ("No deals read from Mercado Libre"); the parser in `scripts/lib/mercadolibre.mjs` then needs an update.
+- Products come from Mercado Libre's official API using the app created at developers.mercadolibre.com.mx; its
+  App ID and Secret Key are the GitHub secrets `ML_CLIENT_ID` and `ML_CLIENT_SECRET`. If the API can't be reached,
+  the run keeps the previous deals and logs a warning. (Reading the public web pages directly is blocked by
+  Mercado Libre's bot protection, so the site doesn't do that.)
 - Automatic posting to WhatsApp groups has no free official method and unofficial bots risk a ban, so WhatsApp uses
   the one-tap `/compartir/` page.
 - The site says clearly that it is independent and uses affiliate links (required by the program and by Google).

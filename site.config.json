@@ -18,8 +18,8 @@
   },
 
   "fetch": {
-    "pages": 4,
-    "includeLightning": true,
+    "maxCategories": 32,
+    "highlightsPerCategory": 20,
     "minDiscount": 15,
     "maxStoredDeals": 400
   },
