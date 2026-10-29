@@ -81,7 +81,25 @@ export const CATEGORIES = [
   { slug: 'mascotas', name: 'Mascotas', emoji: '🐶', keywords: ['perro', 'perros', 'gato', 'gatos', 'mascota', 'mascotas', 'croquetas', 'arena para gato', 'alimento para perro'] },
   { slug: 'autos', name: 'Autos y Motos', emoji: '🚗', keywords: ['llanta', 'llantas', 'auto', 'automotriz', 'moto', 'casco', 'aceite de motor', 'autoestereo', 'dashcam', 'camara de reversa'] },
   { slug: 'moda', name: 'Ropa, Calzado y Accesorios', emoji: '👟', keywords: ['tenis', 'zapatos', 'zapatillas', 'playera', 'camisa', 'camiseta', 'pantalon', 'jeans', 'chamarra', 'sudadera', 'vestido', 'mochila', 'bolsa', 'cartera', 'reloj', 'lentes', 'gorra', 'calcetines', 'sandalias', 'botas'] },
+  { slug: 'despensa', name: 'Despensa y Bebidas', emoji: '🛒', keywords: ['cafe', 'chocolate', 'galletas', 'cereal', 'aceite de oliva', 'cerveza', 'vino', 'tequila', 'whisky', 'agua mineral', 'leche', 'snacks'] },
+  { slug: 'libros', name: 'Libros, Música y Papelería', emoji: '📚', keywords: ['libro', 'libros', 'novela', 'comic', 'manga', 'vinil', 'guitarra', 'teclado musical', 'cuaderno', 'plumas', 'colores', 'papeleria'] },
 ];
+
+// Mercado Libre's own top-level categories (by name) mapped to the site's categories.
+const ML_CATEGORY_SLUGS = [
+  ['accesorios para vehiculos', 'autos'], ['autos', 'autos'], ['agro', 'herramientas'], ['construccion', 'herramientas'],
+  ['herramientas', 'herramientas'], ['industrias', 'herramientas'], ['alimentos', 'despensa'], ['animales', 'mascotas'],
+  ['bebes', 'juguetes'], ['juegos y juguetes', 'juguetes'], ['belleza', 'belleza'], ['camaras', 'electronica'],
+  ['electronica', 'electronica'], ['celulares', 'celulares'], ['computacion', 'computacion'], ['consolas', 'videojuegos'],
+  ['deportes', 'deportes'], ['electrodomesticos', 'electrodomesticos'], ['hogar', 'hogar'], ['joyas', 'moda'],
+  ['ropa', 'moda'], ['salud', 'salud'], ['arte, papeleria', 'libros'], ['libros', 'libros'], ['musica', 'libros'],
+  ['instrumentos', 'libros'],
+];
+
+export function categoryFromMercadoLibre(mlCategoryName, title) {
+  const name = normalizeText(mlCategoryName);
+  return ML_CATEGORY_SLUGS.find(([prefix]) => name.startsWith(prefix))?.[1] ?? categorize(title);
+}
 export const OTHER_CATEGORY = { slug: 'otras', name: 'Otras ofertas', emoji: '🏷️', keywords: [] };
 export const ALL_CATEGORIES = [...CATEGORIES, OTHER_CATEGORY];
 

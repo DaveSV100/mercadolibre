@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { COUNTRIES, affiliateUrl, categorize, itemIdFromUrl, slugify } from '../scripts/lib/core.mjs';
+import { COUNTRIES, affiliateUrl, categorize, categoryFromMercadoLibre, itemIdFromUrl, slugify } from '../scripts/lib/core.mjs';
 import { dealFromItem, dealFromProduct, isProductUrl } from '../scripts/lib/mlapi.mjs';
 
 const MX = COUNTRIES.MX;
@@ -42,6 +42,8 @@ test('helpers', () => {
   assert.equal(itemIdFromUrl('https://articulo.mercadolibre.com.mx/MLM-123456-foo', MX), 'MLM123456');
   assert.equal(isProductUrl('https://www.mercadolibre.com.mx/cafetera/p/MLM555666'), true);
   assert.equal(categorize('Cosa rara'), 'otras');
+  assert.equal(categoryFromMercadoLibre('Accesorios para Vehículos', 'Cargador 12v'), 'autos');
+  assert.equal(categoryFromMercadoLibre('Otras Categorías', 'Freidora de aire'), 'electrodomesticos');
   assert.equal(slugify('Audífonos Ñandú 2×1!'), 'audifonos-nandu-2-1');
   const cfg = { affiliate: { params: { matt_word: 'yo', matt_tool: '' } } };
   assert.equal(affiliateUrl({ id: 'MLM1', url: 'https://www.mercadolibre.com.mx/p/MLM1' }, cfg), 'https://www.mercadolibre.com.mx/p/MLM1?matt_word=yo');

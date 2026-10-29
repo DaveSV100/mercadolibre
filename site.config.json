@@ -1,8 +1,7 @@
 {
   "siteName": "InfiniOfertas",
   "tagline": "Las mejores ofertas y descuentos de Mercado Libre, actualizados automáticamente.",
-  "baseUrl": "https://ofertas.infinistart.com",
-  "customDomain": "ofertas.infinistart.com",
+  "baseUrl": "https://davesv100.github.io/mercadolibre",
   "country": "MX",
 
   "social": {

@@ -61,7 +61,7 @@
   // Tell visitors when a newer version of the site (new deals) has been published.
   const check = async () => {
     try {
-      const res = await fetch('/version.json', { cache: 'no-store' });
+      const res = await fetch(`${window.BASE ?? ''}/version.json`, { cache: 'no-store' });
       const { buildId } = await res.json();
       if (buildId && buildId !== window.BUILD_ID) document.getElementById('refresh').hidden = false;
     } catch { /* offline */ }

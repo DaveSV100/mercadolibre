@@ -1,6 +1,6 @@
 // Updates data/deals.json from Mercado Libre's official API and data/manual.json.
 // Never fails the pipeline: if the API can't be reached, the previous deals are kept.
-import { categorize, itemIdFromUrl, loadConfig, readJson, writeJson } from './lib/core.mjs';
+import { categorize, categoryFromMercadoLibre, itemIdFromUrl, loadConfig, readJson, writeJson } from './lib/core.mjs';
 import { apiClient, getToken, lookupUrl, productDeal } from './lib/mlapi.mjs';
 
 const config = loadConfig();
@@ -59,7 +59,12 @@ if (api) {
       const products = content.filter((c) => c.type === 'PRODUCT').slice(0, config.fetch.highlightsPerCategory);
       const before = found;
       for (const p of products) {
-        try { add(await productDeal(api, p.id, market)); } catch (err) { if (err.status === 401) throw err; }
+        try {
+          const deal = await productDeal(api, p.id, market);
+          if (deal) add({ ...deal, category: categoryFromMercadoLibre(cat.name, deal.title) });
+        } catch (err) {
+          if (err.status === 401) throw err;
+        }
       }
       console.log(`best sellers ${cat.name}: ${products.length} products, ${found - before} deals`);
     } catch (err) {

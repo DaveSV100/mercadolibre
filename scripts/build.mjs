@@ -43,9 +43,12 @@ function timeZoneFor(country) {
 
 // ---------- files ----------
 fs.rmSync(OUT, { recursive: true, force: true });
+// The site may live in a sub-folder (e.g. https://user.github.io/repo) until its own domain is connected.
+const BASE = new URL(config.baseUrl).pathname.replace(/\/$/, '');
 function write(rel, content) {
   const file = path.join(OUT, rel.endsWith('/') ? rel + 'index.html' : rel);
   fs.mkdirSync(path.dirname(file), { recursive: true });
+  if (file.endsWith('.html') && BASE) content = content.replace(/(href|src)="\/(?!\/)/g, `$1="${BASE}/`);
   fs.writeFileSync(file, content);
 }
 fs.cpSync(path.join(ROOT, 'site'), OUT, { recursive: true });
@@ -149,7 +152,7 @@ ${body}
     <p class="muted">Actualizado: ${e(updatedLabel)}</p>
   </div>
 </footer>
-<script>window.BUILD_ID=${JSON.stringify(buildId)}</script>
+<script>window.BUILD_ID=${JSON.stringify(buildId)};window.BASE=${JSON.stringify(BASE)}</script>
 <script src="/app.js?v=${buildId}" defer></script>
 </body>
 </html>
@@ -334,7 +337,6 @@ ${sitemapPaths.map((p) => `<url><loc>${abs(p)}</loc><lastmod>${lastmod}</lastmod
 write('robots.txt', SAMPLE ? 'User-agent: *\nDisallow: /\n' : `User-agent: *\nAllow: /\nDisallow: /compartir/\n\nSitemap: ${abs('/sitemap.xml')}\n`);
 write('version.json', JSON.stringify({ buildId, updatedAt: lastmod, active: active.length }));
 write('.nojekyll', '');
-if (config.customDomain && !SAMPLE) write('CNAME', config.customDomain + '\n');
 
 console.log(`Built ${active.length} active deals, ${deals.length} deal pages, ${categories.length} categories${SAMPLE ? ' (SAMPLE DATA)' : ''} -> dist/`);
 if (!SAMPLE && !affiliateConfigured(config) && !Object.keys(links).length) {
