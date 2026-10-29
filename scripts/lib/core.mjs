@@ -34,7 +34,8 @@ export function loadConfig() {
   config.market = COUNTRIES[config.country];
   if (!config.market) throw new Error(`Unknown country "${config.country}". Use one of: ${Object.keys(COUNTRIES).join(', ')}`);
   // In GitHub Actions the address comes from GitHub Pages (custom domain once it is connected).
-  config.baseUrl = (process.env.SITE_URL || config.baseUrl).replace(/\/$/, '');
+  // Always https: GitHub reports http:// until the domain's certificate is issued.
+  config.baseUrl = (process.env.SITE_URL || config.baseUrl).replace(/\/$/, '').replace(/^http:/, 'https:');
   return config;
 }
 
