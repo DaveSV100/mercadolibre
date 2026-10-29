@@ -87,6 +87,26 @@ if (api) {
       }
     }
   }
+
+  // When nothing matched, show what the API returns so the mapping can be fixed from the run log.
+  if (!found && categories.length) {
+    const show = async (path) => {
+      try { console.log(`sample ${path}: ${JSON.stringify(await api(path)).slice(0, 1500)}`); } catch (err) { console.log(`sample ${err.message}`); }
+    };
+    const { content = [] } = await api(`/highlights/${site}/category/${categories[0].id}`).catch(() => ({}));
+    console.log(`sample highlights: ${JSON.stringify(content.slice(0, 3))}`);
+    const product = content.find((c) => c.type === 'PRODUCT');
+    const item = content.find((c) => c.type === 'ITEM');
+    if (product) {
+      await show(`/products/${product.id}`);
+      await show(`/products/${product.id}/items?limit=2`);
+    }
+    if (item) {
+      await show(`/items/${item.id}`);
+      await show(`/items/${item.id}/sale_price`);
+      await show(`/items/${item.id}/prices`);
+    }
+  }
 }
 
 // 3) Products added by hand. Entries with title + price need no lookup.
