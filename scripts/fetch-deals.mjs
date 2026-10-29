@@ -1,7 +1,7 @@
 // Updates data/deals.json from Mercado Libre's official API and data/manual.json.
 // Never fails the pipeline: if the API can't be reached, the previous deals are kept.
 import { categorize, itemIdFromUrl, loadConfig, readJson, writeJson } from './lib/core.mjs';
-import { apiClient, dealFromItem, dealFromProduct, getToken, lookupUrl } from './lib/mlapi.mjs';
+import { apiClient, getToken, lookupUrl, productDeal } from './lib/mlapi.mjs';
 
 const config = loadConfig();
 const { market } = config;
@@ -51,60 +51,21 @@ if (api) {
     warn(`categories: ${err.message}`);
   }
 
-  // 1) Search each category for discounted items.
-  let searchBlocked = false;
+  // Best sellers of each category; keep the ones whose cheapest listing is discounted.
+  // (Search and single listings are not available to this app: 403.)
   for (const cat of categories) {
     try {
-      const { results = [] } = await api(`/sites/${site}/search?category=${cat.id}&discount=10-100&limit=50`);
+      const { content = [] } = await api(`/highlights/${site}/category/${cat.id}`);
+      const products = content.filter((c) => c.type === 'PRODUCT').slice(0, config.fetch.highlightsPerCategory);
       const before = found;
-      results.forEach((r) => add(dealFromItem(r)));
-      console.log(`search ${cat.name}: ${results.length} results, ${found - before} deals`);
-    } catch (err) {
-      warn(`search ${cat.name}: ${err.message}`);
-      if (err.status === 401 || err.status === 403) { searchBlocked = true; break; }
-    }
-  }
-
-  // 2) Best sellers per category (used when search is not available or finds little).
-  if (searchBlocked || found < 30) {
-    for (const cat of categories) {
-      try {
-        const { content = [] } = await api(`/highlights/${site}/category/${cat.id}`);
-        const top = content.slice(0, config.fetch.highlightsPerCategory);
-        const before = found;
-        const itemIds = top.filter((c) => c.type === 'ITEM').map((c) => c.id);
-        for (let i = 0; i < itemIds.length; i += 20) {
-          const batch = await api(`/items?ids=${itemIds.slice(i, i + 20).join(',')}`);
-          batch.forEach((b) => b.code === 200 && add(dealFromItem(b.body)));
-        }
-        for (const c of top.filter((x) => x.type === 'PRODUCT')) {
-          try { add(dealFromProduct(await api(`/products/${c.id}`))); } catch { /* product without an offer */ }
-        }
-        console.log(`best sellers ${cat.name}: ${top.length} products, ${found - before} deals`);
-      } catch (err) {
-        warn(`best sellers ${cat.name}: ${err.message}`);
-        if (err.status === 401 || err.status === 403) break;
+      for (const p of products) {
+        try { add(await productDeal(api, p.id, market)); } catch (err) { if (err.status === 401) throw err; }
       }
-    }
-  }
-
-  // When nothing matched, show what the API returns so the mapping can be fixed from the run log.
-  if (!found && categories.length) {
-    const show = async (path) => {
-      try { console.log(`sample ${path}: ${JSON.stringify(await api(path)).slice(0, 1500)}`); } catch (err) { console.log(`sample ${err.message}`); }
-    };
-    const { content = [] } = await api(`/highlights/${site}/category/${categories[0].id}`).catch(() => ({}));
-    console.log(`sample highlights: ${JSON.stringify(content.slice(0, 3))}`);
-    const product = content.find((c) => c.type === 'PRODUCT');
-    const item = content.find((c) => c.type === 'ITEM');
-    if (product) {
-      await show(`/products/${product.id}`);
-      await show(`/products/${product.id}/items?limit=2`);
-    }
-    if (item) {
-      await show(`/items/${item.id}`);
-      await show(`/items/${item.id}/sale_price`);
-      await show(`/items/${item.id}/prices`);
+      console.log(`best sellers ${cat.name}: ${products.length} products, ${found - before} deals`);
+    } catch (err) {
+      if (err.status === 404) continue; // categories without best sellers (cars, real estate, services)
+      warn(`best sellers ${cat.name}: ${err.message}`);
+      if (err.status === 401 || err.status === 403) break;
     }
   }
 }

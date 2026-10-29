@@ -57,33 +57,41 @@ export function dealFromItem(item) {
   };
 }
 
-// Catalog products (/products/{id}) carry their price in buy_box_winner.
-export function dealFromProduct(product) {
-  const box = product?.buy_box_winner;
-  if (!product?.id || !product.name || !box) return null;
+// Catalog products: name and pictures come from /products/{id}; prices from its sellers' listings
+// (/products/{id}/items). The cheapest listing is the one shown; it counts only if it is discounted.
+export function dealFromProduct(product, listings, market) {
+  if (!product?.id || !product.name || !listings?.length) return null;
+  const best = [...listings].filter((l) => l.price > 0).sort((a, b) => a.price - b.price)[0];
+  if (!best) return null;
   return dealFromItem({
     id: product.id,
     title: product.name,
-    permalink: product.permalink ?? `https://www.mercadolibre.com.mx/p/${product.id}`,
+    permalink: product.permalink || `https://www.${market.domain}/p/${product.id}`,
     pictures: product.pictures,
-    price: box.price,
-    original_price: box.original_price,
-    currency_id: box.currency_id,
-    shipping: box.shipping,
+    price: best.price,
+    original_price: best.original_price,
+    currency_id: best.currency_id,
+    shipping: best.shipping,
+    tags: best.tags,
   });
+}
+
+export async function productDeal(api, productId, market) {
+  const { results = [] } = await api(`/products/${productId}/items?limit=20`);
+  if (!results.some((l) => l.original_price > l.price)) return null;
+  return dealFromProduct(await api(`/products/${productId}`), results, market);
 }
 
 export const isProductUrl = (url) => /\/p\/[A-Z]{3}\d+/i.test(url);
 
-// Looks up one Mercado Libre link (item or catalog product) for data/manual.json.
+// Looks up one Mercado Libre catalog link (…/p/MLM123) for data/manual.json.
 export async function lookupUrl(api, url, market) {
   const id = itemIdFromUrl(url, market);
-  if (!id) throw new Error('no Mercado Libre id in the link');
-  if (isProductUrl(url)) {
-    const p = await api(`/products/${id}`);
-    const box = p.buy_box_winner ?? {};
-    return { id, title: p.name, url, image: httpsImage(p.pictures?.[0]?.url), price: box.price, originalPrice: box.original_price, currency: box.currency_id, freeShipping: Boolean(box.shipping?.free_shipping) };
-  }
-  const item = await api(`/items/${id}`);
-  return { id, title: item.title, url: item.permalink ?? url, image: httpsImage(item.pictures?.[0]?.secure_url ?? item.thumbnail), price: item.price, originalPrice: item.original_price, currency: item.currency_id, freeShipping: Boolean(item.shipping?.free_shipping) };
+  if (!id || !isProductUrl(url)) throw new Error('use the product link that contains /p/MLM… (single listings are not readable with this app)');
+  const { results = [] } = await api(`/products/${id}/items?limit=20`);
+  const product = await api(`/products/${id}`);
+  const deal = dealFromProduct(product, results, market);
+  if (deal) return { ...deal, url };
+  const cheapest = results.filter((l) => l.price > 0).sort((a, b) => a.price - b.price)[0];
+  return { id, title: product.name, url, image: httpsImage(product.pictures?.[0]?.url), price: cheapest?.price, currency: cheapest?.currency_id, freeShipping: Boolean(cheapest?.shipping?.free_shipping) };
 }

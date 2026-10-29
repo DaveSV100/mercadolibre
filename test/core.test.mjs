@@ -24,11 +24,18 @@ test('uses sale_price when present and skips items without a discount', () => {
   assert.equal(dealFromItem({ id: 'MLM3', title: 'x', price: 100, original_price: 90 }), null);
 });
 
-test('maps a catalog product with a buy box', () => {
-  const d = dealFromProduct({ id: 'MLM555', name: 'Audífonos Bluetooth', pictures: [{ url: 'https://img/x-O.jpg' }],
-    buy_box_winner: { price: 300, original_price: 600, currency_id: 'MXN', shipping: { free_shipping: false } } });
-  assert.deepEqual([d.id, d.url, d.discount, d.category], ['MLM555', 'https://www.mercadolibre.com.mx/p/MLM555', 50, 'electronica']);
-  assert.equal(dealFromProduct({ id: 'MLM556', name: 'Sin oferta' }), null);
+test('maps a catalog product using its cheapest listing', () => {
+  const product = { id: 'MLM555', name: 'Audífonos Bluetooth', permalink: '', pictures: [{ url: 'https://img/x-F.jpg' }] };
+  const listings = [
+    { item_id: 'MLM1', price: 450, original_price: 600, currency_id: 'MXN', shipping: { free_shipping: true } },
+    { item_id: 'MLM2', price: 300, original_price: 600, currency_id: 'MXN', shipping: { free_shipping: false } },
+  ];
+  const d = dealFromProduct(product, listings, MX);
+  assert.deepEqual([d.id, d.url, d.price, d.discount, d.freeShipping, d.image, d.category],
+    ['MLM555', 'https://www.mercadolibre.com.mx/p/MLM555', 300, 50, false, 'https://img/x-F.jpg', 'electronica']);
+  // The cheapest listing has no discount, so the product is not a deal.
+  assert.equal(dealFromProduct(product, [{ price: 280, original_price: null }, ...listings], MX), null);
+  assert.equal(dealFromProduct(product, [], MX), null);
 });
 
 test('helpers', () => {
