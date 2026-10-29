@@ -18,8 +18,7 @@ For WhatsApp, open **/compartir/** on your phone: it has today's message ready, 
 1. **Turn on the website**: repo **Settings → Pages → Source: GitHub Actions**.
 2. **Connect the domain**: in your DNS (where you bought infinistart.com) add a `CNAME` record
    `ofertas` → `davesv100.github.io`. Then **Settings → Pages → Custom domain**: `ofertas.infinistart.com`, and tick **Enforce HTTPS** when it becomes available.
-   Finally change `baseUrl` in `site.config.json` to `https://ofertas.infinistart.com` (or ask Claude to). Until then the
-   site lives at https://davesv100.github.io/mercadolibre/.
+   The next run picks up the new address by itself. Until then the site lives at https://davesv100.github.io/mercadolibre/.
 3. **Affiliate tracking** (required to earn commission): create one link in the Afiliados portal, open it, and copy the
    final address. Put the tracking values you see (for example `matt_word` and `matt_tool`) in `site.config.json → affiliate.params`.
    Or just send that link to Claude and ask it to configure it.

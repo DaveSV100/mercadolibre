@@ -8,8 +8,8 @@ Automatic Mercado Libre affiliate deals site (InfiniOfertas, ofertas.infinistart
 - `scripts/build.mjs` – static site → `dist/` (`--sample` uses `samples/`, noindex, never deploy).
 - `scripts/post-telegram.mjs` – posts to Telegram from env secrets; state in `data/posted.json`.
 - `.github/workflows/update.yml` – every 2 h on `main`: test → fetch → build → Pages deploy → Telegram → commit data.
-- Config: `site.config.json`. `baseUrl` is the public address (GitHub Pages sub-folder until ofertas.infinistart.com is
-  connected; switch it then). User-facing site text is Spanish; owner talks in English.
+- Config: `site.config.json`. The public address comes from GitHub Pages (`SITE_URL` in the workflow); `baseUrl` is
+  only the fallback for local builds. User-facing site text is Spanish; owner talks in English.
 
 Checks: `npm test`, `node scripts/build.mjs --sample`. The Claude cloud sandbox cannot reach mercadolibre.com.* unless
 the domain is allowed in the environment's network settings, so API changes are verified by running the workflow

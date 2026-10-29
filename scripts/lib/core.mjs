@@ -33,7 +33,8 @@ export function loadConfig() {
   const config = readJson('site.config.json');
   config.market = COUNTRIES[config.country];
   if (!config.market) throw new Error(`Unknown country "${config.country}". Use one of: ${Object.keys(COUNTRIES).join(', ')}`);
-  config.baseUrl = config.baseUrl.replace(/\/$/, '');
+  // In GitHub Actions the address comes from GitHub Pages (custom domain once it is connected).
+  config.baseUrl = (process.env.SITE_URL || config.baseUrl).replace(/\/$/, '');
   return config;
 }
 

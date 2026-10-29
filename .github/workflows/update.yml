@@ -43,10 +43,14 @@ jobs:
           ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
         run: node scripts/fetch-deals.mjs
 
-      - name: Construir el sitio
-        run: node scripts/build.mjs
+      - id: pages
+        uses: actions/configure-pages@v5
 
-      - uses: actions/configure-pages@v5
+      # Uses the address GitHub Pages reports, so connecting the custom domain needs no code change.
+      - name: Construir el sitio
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+        run: node scripts/build.mjs
 
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -60,6 +64,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
         run: node scripts/post-telegram.mjs
 
       - name: Guardar las ofertas en el repositorio
