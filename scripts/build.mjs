@@ -54,6 +54,8 @@ function write(rel, content) {
 fs.cpSync(path.join(ROOT, 'site'), OUT, { recursive: true });
 
 // ---------- components ----------
+const LOGO_MARK = '<svg class="logo-mark" viewBox="57 -24 300 200" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="26"><path d="M200,100 C160,48 90,48 90,100 C90,152 160,152 200,100" stroke="currentColor"/><path d="M200,100 C240,152 310,152 310,100 C310,90 307,82 302,75" stroke="#E5252A"/><path d="M200,100 C215,80 235,62 255,48 L310,8" stroke="#E5252A"/></g><path d="M284,-1 L336,-10 L312,38 Z" fill="#E5252A" stroke="#E5252A" stroke-width="4" stroke-linejoin="round"/></svg>';
+
 const icon = {
   telegram: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.8 15.2 9.6 19c.4 0 .6-.2.8-.4l2-1.9 4.1 3c.8.4 1.3.2 1.5-.7l2.7-12.7c.3-1.1-.4-1.6-1.2-1.3L3.6 10.3c-1.1.4-1.1 1-.2 1.3l4.1 1.3 9.6-6c.5-.3.9-.1.5.2z"/></svg>',
   whatsapp: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>',
@@ -127,6 +129,8 @@ ${noindex || SAMPLE ? '<meta name="robots" content="noindex">' : '<meta name="ro
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#4f2bd9">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="alternate" type="application/rss+xml" title="${e(config.siteName)}" href="/rss.xml">
 <link rel="stylesheet" href="/styles.css?v=${buildId}">
 ${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, '\\u003c')}</script>`).join('\n')}
@@ -135,11 +139,12 @@ ${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j).repl
 ${SAMPLE ? '<div class="sample">Vista previa con productos de EJEMPLO. No son ofertas reales.</div>' : ''}
 <header class="top">
   <div class="wrap top-in">
-    <a class="logo" href="/" aria-label="${e(config.siteName)} inicio"><span class="logo-mark">∞</span><span>${e(config.siteName.replace(/Ofertas$/, ''))}<b>Ofertas</b></span></a>
+    <a class="logo" href="/" aria-label="${e(config.siteName)} inicio">${LOGO_MARK}<span>${e(config.siteName.replace(/Ofertas$/, ''))}<b>Ofertas</b></span></a>
     <nav class="top-nav">${coupons.length ? '<a href="/cupones/">Cupones</a>' : ''}<a href="/acerca/">Cómo funciona</a></nav>
     ${joinButtons()}
   </div>
 </header>
+<button id="totop" class="totop" type="button" aria-label="Volver arriba" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 5.6 4.3 13.3l1.4 1.4L11 9.4V20h2V9.4l5.3 5.3 1.4-1.4z"/></svg></button>
 <div id="refresh" class="refresh" hidden><span>Hay ofertas nuevas</span><button type="button" onclick="location.reload()">Actualizar</button></div>
 <main>
 ${body}
@@ -159,7 +164,7 @@ ${body}
 `;
 }
 
-const org = { '@type': 'Organization', name: config.siteName, url: config.baseUrl, logo: abs('/favicon.svg') };
+const org = { '@type': 'Organization', name: config.siteName, url: config.baseUrl, logo: abs('/icon-512.png') };
 const breadcrumbs = (items) => ({
   '@context': 'https://schema.org', '@type': 'BreadcrumbList',
   itemListElement: items.map(([name, p], i) => ({ '@type': 'ListItem', position: i + 1, name, item: abs(p) })),
@@ -295,21 +300,34 @@ write('/acerca/', layout({
 </div>`,
 }));
 
-// ---------- WhatsApp / Telegram share helper (not indexed) ----------
-const fresh = active.filter((d) => now - Date.parse(d.firstSeen) < 864e5).slice(0, 10);
-const digestDeals = fresh.length >= 3 ? fresh : active.slice(0, 10);
+// ---------- WhatsApp share helper (not indexed) ----------
+// One message per deal: WhatsApp previews only the first link of a message, so each deal goes alone to show its photo.
+const fresh = active.filter((d) => now - Date.parse(d.firstSeen) < 864e5);
+const shareDeals = (fresh.length >= 10 ? fresh : active).slice(0, 40);
+const shareText = (d) => `🔥 ${d.discount ? `*-${d.discount}%* ` : ''}${d.title}\n💰 *${price(d.price)}*${d.originalPrice ? ` ~${price(d.originalPrice)}~` : ''}${d.freeShipping ? ' · Envío gratis' : ''}\n👉 ${abs(d.page)}`;
 const digest = [`🔥 *Ofertas de hoy en Mercado Libre* 🔥`, '',
-  ...digestDeals.map((d) => `${d.discount ? `*-${d.discount}%* ` : ''}${d.title.slice(0, 80)}\n💰 ${price(d.price)}${d.originalPrice ? ` ~${price(d.originalPrice)}~` : ''}\n👉 ${abs(d.page)}\n`),
+  ...shareDeals.slice(0, 10).map((d) => `${d.discount ? `*-${d.discount}%* ` : ''}${d.title.slice(0, 80)}\n💰 ${price(d.price)}${d.originalPrice ? ` ~${price(d.originalPrice)}~` : ''}\n👉 ${abs(d.page)}\n`),
   `Más ofertas: ${config.baseUrl}`].join('\n');
 write('/compartir/', layout({
   title: 'Compartir ofertas',
-  description: 'Mensaje listo para compartir.',
+  description: 'Ofertas listas para compartir por WhatsApp.',
   pathname: '/compartir/',
   noindex: true,
-  body: `<div class="wrap prose"><h1>Mensaje del día para WhatsApp</h1>
-  <p>Toca <b>Enviar por WhatsApp</b> y elige tu grupo o canal. También puedes copiarlo.</p>
-  <textarea id="digest" rows="16" readonly>${e(digest)}</textarea>
-  <div class="share"><a class="btn share-wa" href="https://wa.me/?text=${encodeURIComponent(digest)}" target="_blank" rel="noopener">${icon.whatsapp}Enviar por WhatsApp</a><button type="button" data-copy-from="digest">Copiar mensaje</button></div>
+  body: `<div class="wrap share-page">
+  <header class="page-head"><h1>Compartir por WhatsApp</h1>
+  <p class="lead">Toca <b>WhatsApp</b> en cada oferta y elige tu grupo: cada una se envía con su foto. Las que ya enviaste quedan marcadas.</p></header>
+  <ol class="sh-list">${shareDeals.map((d) => `<li class="sh-item" data-sent-key="${d.id}">
+    <a class="sh-img" href="${d.page}">${media(d)}</a>
+    <div class="sh-info"><p class="sh-title">${d.discount ? `<b>-${d.discount}%</b> ` : ''}${e(d.title)}</p><p class="sh-price">${price(d.price)}${d.originalPrice ? ` <s>${price(d.originalPrice)}</s>` : ''}</p></div>
+    <div class="sh-act">
+      <a class="sh-wa" href="https://wa.me/?text=${encodeURIComponent(shareText(d))}" target="_blank" rel="noopener" data-mark-sent>${icon.whatsapp}<span>WhatsApp</span></a>
+      <button type="button" class="sh-copy" data-copy="${e(shareText(d))}">Copiar</button>
+    </div>
+  </li>`).join('')}</ol>
+  <details class="sh-digest"><summary>Mensaje con las 10 mejores en uno solo</summary>
+    <textarea id="digest" rows="14" readonly>${e(digest)}</textarea>
+    <div class="share"><a class="btn share-wa" href="https://wa.me/?text=${encodeURIComponent(digest)}" target="_blank" rel="noopener">${icon.whatsapp}Enviar por WhatsApp</a><button type="button" data-copy-from="digest">Copiar mensaje</button></div>
+  </details>
 </div>`,
 }));
 

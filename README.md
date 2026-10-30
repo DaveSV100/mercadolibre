@@ -11,7 +11,7 @@ Every 2 hours, for free, GitHub:
 6. posts the best new deals (25%+) to your Telegram channel.
 
 Visitors with the site open get a "Hay ofertas nuevas · Actualizar" notice when a new version is published.
-For WhatsApp, open **/compartir/** on your phone: it has today's message ready, one tap sends it to a group or channel.
+For WhatsApp, open **/compartir/** on your phone: every deal has its own WhatsApp button, so each one is sent with its photo.
 
 ## One-time setup (all in GitHub, from a computer or the GitHub app)
 
@@ -25,6 +25,7 @@ For WhatsApp, open **/compartir/** on your phone: it has today's message ready, 
 4. **Telegram** (optional): create a bot with @BotFather, add it as admin of your channel, then in
    **Settings → Secrets and variables → Actions** add `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` (e.g. `@infiniofertas`).
 5. Put your Telegram/WhatsApp invite links in `site.config.json → social` so the join buttons appear.
+6. Channel photo and description: **Actions → Configurar Telegram → Run workflow** (uses `brand/telegram-avatar.png`).
 
 ## Day to day
 

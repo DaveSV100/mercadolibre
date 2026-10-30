@@ -58,6 +58,28 @@
     } catch { /* clipboard not available */ }
   });
 
+  // Back-to-top button.
+  const totop = document.getElementById('totop');
+  if (totop) {
+    const toggle = () => { totop.hidden = window.scrollY < 600; };
+    window.addEventListener('scroll', toggle, { passive: true });
+    totop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    toggle();
+  }
+
+  // Share page: remember (in this browser, for today) which deals were already sent.
+  const sentKey = `sent-${new Date().toISOString().slice(0, 10)}`;
+  let sent = [];
+  try { sent = JSON.parse(localStorage.getItem(sentKey) ?? '[]'); } catch { /* storage unavailable */ }
+  document.querySelectorAll('[data-sent-key]').forEach((li) => {
+    if (sent.includes(li.dataset.sentKey)) li.classList.add('sent');
+    li.querySelectorAll('[data-mark-sent], .sh-copy').forEach((a) => a.addEventListener('click', () => {
+      li.classList.add('sent');
+      if (!sent.includes(li.dataset.sentKey)) sent.push(li.dataset.sentKey);
+      try { localStorage.setItem(sentKey, JSON.stringify(sent)); } catch { /* storage unavailable */ }
+    }));
+  });
+
   // Tell visitors when a newer version of the site (new deals) has been published.
   const check = async () => {
     try {
