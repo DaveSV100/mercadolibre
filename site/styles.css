@@ -206,6 +206,7 @@ svg { width: 1em; height: 1em; flex: none; }
 .prose h1 { font-size: clamp(26px, 4vw, 38px); letter-spacing: -0.03em; line-height: 1.1; }
 .prose h2 { font-size: 20px; margin-top: 28px; }
 .prose p { color: var(--muted); }
+.links-tool textarea { margin-top: 8px; }
 .prose textarea { width: 100%; padding: 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--text); font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
 
 .foot { border-top: 1px solid var(--line); background: var(--surface); padding: 28px 0 40px; font-size: 14px; color: var(--muted); }

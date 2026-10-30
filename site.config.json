@@ -3,6 +3,7 @@
   "tagline": "Las mejores ofertas y descuentos de Mercado Libre, actualizados automáticamente.",
   "baseUrl": "https://ofertas.infinistart.com",
   "country": "MX",
+  "githubRepo": "DaveSV100/mercadolibre",
 
   "social": {
     "telegramUrl": "https://t.me/infiniofertas",
@@ -33,6 +34,7 @@
   "telegram": {
     "minDiscount": 25,
     "maxPerRun": 6,
-    "repostAfterDays": 7
+    "repostAfterDays": 7,
+    "onlyOfficialLinks": true
   }
 }

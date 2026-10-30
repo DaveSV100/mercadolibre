@@ -331,6 +331,34 @@ write('/compartir/', layout({
 </div>`,
 }));
 
+// ---------- Official affiliate links helper (private, not indexed) ----------
+// Mercado Libre only guarantees clicks on links made by its own generator (meli.la), and there is no API for it.
+// This page lists the top deals still missing one: copy -> paste in the generator -> paste the results back -> save.
+// Saving opens a pre-filled GitHub issue; the "Guardar enlaces" workflow stores them in data/affiliate-links.json.
+const needLinks = active.filter((d) => !links[d.id]).slice(0, 50);
+const linked = active.filter((d) => links[d.id]).length;
+write('/enlaces/', layout({
+  title: 'Enlaces oficiales de afiliado',
+  description: 'Herramienta privada.',
+  pathname: '/enlaces/',
+  noindex: true,
+  body: `<div class="wrap prose links-tool">
+  <h1>Enlaces oficiales de afiliado</h1>
+  <p><b>${linked}</b> de ${active.length} ofertas activas ya tienen enlace oficial (meli.la). Faltan ${active.length - linked}; aquí están las ${needLinks.length} más importantes.</p>
+  ${needLinks.length ? `<h2>1. Copia estos enlaces</h2>
+  <textarea id="todo" rows="8" readonly>${needLinks.map((d) => e(d.url)).join('\n')}</textarea>
+  <div class="share"><button type="button" class="btn" data-copy-from="todo">Copiar ${needLinks.length} enlaces</button></div>
+  <h2>2. Genera los enlaces en Mercado Libre</h2>
+  <p>Abre el <a href="https://www.${market.domain}/afiliados/linkbuilder" target="_blank" rel="noopener">Generador de productos recomendados</a>, pega todo en el cuadro de URLs, toca <b>Generar</b> y luego <b>Copiar</b> (Link corto).</p>
+  <h2>3. Pégalos aquí y guarda</h2>
+  <textarea id="done" rows="8" placeholder="https://meli.la/..."></textarea>
+  <p id="links-msg" class="muted"></p>
+  <div class="share"><button type="button" class="btn" id="save-links">Guardar enlaces</button></div>
+  <p class="muted">Se abrirá GitHub con todo listo: solo toca <b>Submit new issue</b>. En unos minutos el sitio y Telegram usarán esos enlaces.</p>
+  <script type="application/json" id="links-data">${JSON.stringify({ ids: needLinks.map((d) => d.id), repo: config.githubRepo }).replace(/</g, '\\u003c')}</script>` : '<p>Todas las ofertas activas tienen enlace oficial. 🎉</p>'}
+</div>`,
+}));
+
 // ---------- 404, feeds, sitemap ----------
 write('404.html', layout({
   title: 'Página no encontrada', description: 'Esta oferta ya no existe.', pathname: '/404.html', noindex: true,
@@ -352,7 +380,7 @@ write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 ${sitemapPaths.map((p) => `<url><loc>${abs(p)}</loc><lastmod>${lastmod}</lastmod></url>`).join('\n')}
 </urlset>
 `);
-write('robots.txt', SAMPLE ? 'User-agent: *\nDisallow: /\n' : `User-agent: *\nAllow: /\nDisallow: /compartir/\n\nSitemap: ${abs('/sitemap.xml')}\n`);
+write('robots.txt', SAMPLE ? 'User-agent: *\nDisallow: /\n' : `User-agent: *\nAllow: /\nDisallow: /compartir/\nDisallow: /enlaces/\n\nSitemap: ${abs('/sitemap.xml')}\n`);
 write('version.json', JSON.stringify({ buildId, updatedAt: lastmod, active: active.length }));
 write('.nojekyll', '');
 

@@ -17,3 +17,8 @@ and reading its logs.
 
 The owner is non-technical: when they ask to add a product, append to `data/manual.json` (title/price/image can be
 given by hand so no fetch is needed); affiliate short links go in `data/affiliate-links.json`.
+
+Official meli.la links can only be made in ML's logged-in link generator (no API). `/enlaces/` (private page) lists the top
+deals without one; the owner pastes generated links back, which opens an issue titled "Enlaces de afiliado";
+`.github/workflows/save-links.yml` (owner-only) runs `scripts/save-links.mjs` and re-runs the site update.
+`telegram.onlyOfficialLinks` makes Telegram post only deals with an official link.

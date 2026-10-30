@@ -23,6 +23,8 @@ const repostMs = config.telegram.repostAfterDays * 864e5;
 
 const queue = readJson('data/deals.json', [])
   .filter((d) => isActive(d, config, now) && d.discount >= config.telegram.minDiscount)
+  // Only deals with an official meli.la link, so Mercado Libre counts every tap (see /enlaces/ on the site).
+  .filter((d) => !config.telegram.onlyOfficialLinks || links[d.id])
   .filter((d) => !posted[d.id] || now - Date.parse(posted[d.id].at) > repostMs || d.price < posted[d.id].price * 0.95)
   .sort((a, b) => b.discount - a.discount)
   .slice(0, config.telegram.maxPerRun);

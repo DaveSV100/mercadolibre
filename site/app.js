@@ -80,6 +80,25 @@
     }));
   });
 
+  // Official affiliate links page: pair the generated meli.la links with the listed deals (same order) and
+  // open a pre-filled GitHub issue that the "Guardar enlaces" workflow turns into data/affiliate-links.json.
+  const saveLinks = document.getElementById('save-links');
+  if (saveLinks) {
+    const { ids, repo } = JSON.parse(document.getElementById('links-data').textContent);
+    const msg = document.getElementById('links-msg');
+    saveLinks.addEventListener('click', () => {
+      const found = document.getElementById('done').value.match(/https:\/\/meli\.la\/[A-Za-z0-9]+/g) ?? [];
+      if (found.length !== ids.length) {
+        msg.textContent = `Pegaste ${found.length} enlaces meli.la, pero se esperan ${ids.length} (uno por producto, en el mismo orden).`;
+        return;
+      }
+      const map = Object.fromEntries(ids.map((id, i) => [id, found[i]]));
+      const body = '```json\n' + JSON.stringify(map, null, 1) + '\n```';
+      window.open(`https://github.com/${repo}/issues/new?title=${encodeURIComponent('Enlaces de afiliado')}&body=${encodeURIComponent(body)}`, '_blank');
+      msg.textContent = 'Listo: en GitHub toca "Submit new issue".';
+    });
+  }
+
   // Tell visitors when a newer version of the site (new deals) has been published.
   const check = async () => {
     try {
