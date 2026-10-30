@@ -21,4 +21,4 @@ given by hand so no fetch is needed); affiliate short links go in `data/affiliat
 Official meli.la links can only be made in ML's logged-in link generator (no API). `/enlaces/` (private page) lists the top
 deals without one; the owner pastes generated links back, which opens an issue titled "Enlaces de afiliado";
 `.github/workflows/save-links.yml` (owner-only) runs `scripts/save-links.mjs` and re-runs the site update.
-`telegram.onlyOfficialLinks` makes Telegram post only deals with an official link.
+Telegram posts deals with an official link first; `telegram.onlyOfficialLinks` (off) would post only those.

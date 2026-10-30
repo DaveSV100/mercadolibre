@@ -35,6 +35,6 @@
     "minDiscount": 25,
     "maxPerRun": 6,
     "repostAfterDays": 7,
-    "onlyOfficialLinks": true
+    "onlyOfficialLinks": false
   }
 }

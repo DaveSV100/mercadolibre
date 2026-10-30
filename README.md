@@ -33,7 +33,7 @@ For WhatsApp, open **/compartir/** on your phone: every deal has its own WhatsAp
 |---|---|
 | Refresh right now | GitHub → **Actions → Actualizar ofertas → Run workflow** (works in the GitHub mobile app) |
 | Add a specific product | Add `{ "url": "https://..." }` to `data/manual.json` (or ask Claude) |
-| Official affiliate links (guaranteed clicks) | Open **/enlaces/** on the site (computer): copy the list → Mercado Libre's *Generador de productos recomendados* → Generar → copy → paste back → **Guardar enlaces** → **Submit new issue**. The "Guardar enlaces" workflow stores them and republishes. Telegram only posts deals that have one. |
+| Official affiliate links (guaranteed clicks) | Open **/enlaces/** on the site (computer): copy the list → Mercado Libre's *Generador de productos recomendados* → Generar → copy → paste back → **Guardar enlaces** → **Submit new issue**. The "Guardar enlaces" workflow stores them and republishes. Optional: deals without one keep the tagged link; Telegram posts the ones with official links first. |
 | Add a coupon | Add `{ "title": "...", "code": "...", "url": "...", "expiresAt": "2026-12-31" }` to `data/coupons.json` |
 | Change country | `site.config.json → country`: MX, AR, CO, CL, PE or UY |
 | Change how often it runs | `.github/workflows/update.yml → cron` |
