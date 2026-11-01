@@ -364,6 +364,7 @@ write('/publicar/', layout({
   pathname: '/publicar/',
   noindex: true,
   body: `<div class="wrap prose">${adminGate(`
+  <p class="muted">Herramientas: <a href="/enlaces/">enlaces oficiales de afiliado</a> · <a href="/compartir/">compartir por WhatsApp</a></p>
   <h1>Publicar cupones</h1>
   <label for="cp-text"><b>Texto del cupón</b> (pégalo tal cual)</label>
   <textarea id="cp-text" rows="7" placeholder="Ej.: 15% OFF en Electrónica con el código MELI15. Compra mínima $999."></textarea>
@@ -388,6 +389,7 @@ write('/enlaces/', layout({
   pathname: '/enlaces/',
   noindex: true,
   body: `<div class="wrap prose links-tool">${adminGate(`
+  <p class="muted">Herramientas: <a href="/publicar/">🎟️ publicar cupones</a> · <a href="/compartir/">compartir por WhatsApp</a></p>
   <h1>Enlaces oficiales de afiliado</h1>
   <p><b>${linked}</b> de ${active.length} ofertas activas ya tienen enlace oficial (meli.la). Faltan ${active.length - linked}; aquí están las ${needLinks.length} más importantes.</p>
   ${needLinks.length ? `<h2>1. Copia estos enlaces</h2>
