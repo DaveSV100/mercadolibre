@@ -22,3 +22,8 @@ Official meli.la links can only be made in ML's logged-in link generator (no API
 deals without one; the owner pastes generated links back, which opens an issue titled "Enlaces de afiliado";
 `.github/workflows/save-links.yml` (owner-only) runs `scripts/save-links.mjs` and re-runs the site update.
 Telegram posts deals with an official link first; `telegram.onlyOfficialLinks` (off) would post only those.
+
+Coupons: `/publicar/` (private, behind a code whose SHA-256 is `adminCodeSha256`; the code screen only hides the tools,
+the real protection is the owner-only check in the workflows) opens an issue titled "Cupón…" or "Quitar cupón";
+`.github/workflows/publish-coupon.yml` runs `scripts/save-coupon.mjs` on `data/coupons.json`. The header 🎟️ Cupones
+button and `/cupones/` exist only while some coupon is still valid (through its `expiresAt` day, Mexico City time).

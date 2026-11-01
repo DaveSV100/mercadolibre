@@ -18,8 +18,10 @@ const buildId = now.toString(36);
 const deals = SAMPLE
   ? readJson('samples/sample-deals.json').map((d) => ({ ...d, firstSeen: new Date(now - d.hoursAgo * 36e5).toISOString(), lastSeen: new Date(now).toISOString() }))
   : readJson('data/deals.json', []);
+// Coupons are valid through the end of their expiry day, Mexico City time.
+const couponExpired = (c) => c.expiresAt && Date.parse(`${c.expiresAt.slice(0, 10)}T23:59:59-06:00`) < now;
 const coupons = (SAMPLE ? readJson('samples/sample-coupons.json', []) : readJson('data/coupons.json', []))
-  .filter((c) => !c.expiresAt || Date.parse(c.expiresAt) > now);
+  .filter((c) => !couponExpired(c));
 const links = readJson('data/affiliate-links.json', {});
 
 const byScore = (a, b) => b.discount - a.discount || b.lastSeen.localeCompare(a.lastSeen);
@@ -140,7 +142,8 @@ ${SAMPLE ? '<div class="sample">Vista previa con productos de EJEMPLO. No son of
 <header class="top">
   <div class="wrap top-in">
     <a class="logo" href="/" aria-label="${e(config.siteName)} inicio">${LOGO_MARK}<span>${e(config.siteName.replace(/Ofertas$/, ''))}<b>Ofertas</b></span></a>
-    <nav class="top-nav">${coupons.length ? '<a href="/cupones/">Cupones</a>' : ''}<a href="/acerca/">Cómo funciona</a></nav>
+    <nav class="top-nav"><a href="/acerca/">Cómo funciona</a></nav>
+    ${coupons.length ? `<a class="coupon-btn" href="/cupones/">🎟️ Cupones <small>${coupons.length}</small></a>` : ''}
     ${joinButtons()}
   </div>
 </header>
@@ -273,13 +276,29 @@ for (const d of deals) {
 }
 
 // ---------- coupons ----------
+// Each coupon is the text the owner pasted on /publicar/ (plus optional expiry and link).
+const COUPONS_URL = affiliateUrl({ id: '', url: `https://www.${market.domain}/cupones` }, config);
+const tagMlLinks = (url) => (/^https:\/\/(www\.)?mercadolibre\./.test(url) ? affiliateUrl({ id: '', url }, config) : url);
+const linkify = (text) => e(text).replace(/https?:\/\/[^\s<]+/g, (u) => `<a href="${tagMlLinks(u.replace(/&amp;/g, '&'))}" ${buyAttrs}>${u}</a>`).replace(/\n/g, '<br>');
+// Codes: the word after "código/cupón/code:", or an all-caps word mixing letters and digits.
+function couponCodes(text) {
+  const found = new Set();
+  for (const m of text.matchAll(/(?:c[óo]digo|cup[óo]n|code)\s*:?\s*([A-Z0-9][A-Z0-9_-]{3,24})\b/gi)) if (/\d|[A-Z]{4,}/.test(m[1])) found.add(m[1].toUpperCase());
+  for (const m of text.matchAll(/\b(?=[A-Z0-9]*\d)(?=[A-Z0-9]*[A-Z])[A-Z0-9]{5,20}\b/g)) found.add(m[0]);
+  return [...found];
+}
 if (coupons.length) {
   write('/cupones/', layout({
     title: 'Cupones y códigos de descuento de Mercado Libre',
     description: `Cupones y códigos promocionales vigentes para Mercado Libre ${market.name}.`,
     pathname: '/cupones/',
-    body: `<div class="wrap"><header class="page-head"><h1>🎟️ Cupones y códigos</h1><p class="lead">Cupones públicos vigentes. Algunos cupones de Mercado Libre son personales y solo aparecen en tu cuenta.</p></header>
-  <div class="coupons">${coupons.map((c) => `<div class="coupon"><div><h3>${e(c.title)}</h3>${c.description ? `<p>${e(c.description)}</p>` : ''}${c.expiresAt ? `<p class="muted">Vence: ${e(dateFmt.format(Date.parse(c.expiresAt)))}</p>` : ''}</div><div class="coupon-act">${c.code ? `<button type="button" class="code" data-copy="${e(c.code)}">${e(c.code)}</button>` : ''}${c.url ? `<a class="btn" href="${e(c.url)}" ${buyAttrs}>Usar cupón</a>` : ''}</div></div>`).join('')}</div></div>`,
+    body: `<div class="wrap"><header class="page-head"><h1>🎟️ Cupones</h1><p class="lead">Cupones vigentes de Mercado Libre ${e(market.name)}. Algunos cupones son personales: revisa también <a href="${e(COUPONS_URL)}" ${buyAttrs}>tus cupones en Mercado Libre</a>.</p></header>
+  <div class="coupons">${coupons.map((c) => {
+    const text = c.text ?? [c.title, c.description].filter(Boolean).join('\n');
+    const codes = c.code ? [c.code] : couponCodes(text);
+    return `<div class="coupon"><div class="coupon-text"><p>${linkify(text)}</p>${c.expiresAt ? `<p class="muted">Válido hasta: ${e(dateFmt.format(Date.parse(`${c.expiresAt.slice(0, 10)}T12:00:00-06:00`)))}</p>` : ''}</div>
+    <div class="coupon-act">${codes.map((code) => `<button type="button" class="code" data-copy="${e(code)}" title="Copiar código">${e(code)}</button>`).join('')}<a class="btn" href="${e(c.url ? tagMlLinks(c.url) : COUPONS_URL)}" ${buyAttrs}>Usar en Mercado Libre</a></div></div>`;
+  }).join('')}</div></div>`,
   }));
 }
 
@@ -331,6 +350,32 @@ write('/compartir/', layout({
 </div>`,
 }));
 
+// ---------- Owner tools (private, not indexed) ----------
+// The code screen only hides the tools from visitors. What really protects publishing is that the GitHub workflows
+// act only on issues opened by the repository owner.
+const adminGate = (inner) => `<div class="admin-gate" data-admin-gate="${config.adminCodeSha256}">
+  <form class="gate-form"><label for="gate-code">Código de acceso</label><input id="gate-code" type="password" inputmode="numeric" autocomplete="current-password" required><button class="btn" type="submit">Entrar</button><p class="gate-msg muted" aria-live="polite"></p></form>
+  <div data-admin hidden>${inner}</div></div>`;
+
+const allCoupons = SAMPLE ? coupons : readJson('data/coupons.json', []);
+write('/publicar/', layout({
+  title: 'Publicar cupones',
+  description: 'Herramienta privada.',
+  pathname: '/publicar/',
+  noindex: true,
+  body: `<div class="wrap prose">${adminGate(`
+  <h1>Publicar cupones</h1>
+  <label for="cp-text"><b>Texto del cupón</b> (pégalo tal cual)</label>
+  <textarea id="cp-text" rows="7" placeholder="Ej.: 15% OFF en Electrónica con el código MELI15. Compra mínima $999."></textarea>
+  <div class="cp-row"><label>Válido hasta<input id="cp-until" type="date"></label><label>Enlace (opcional)<input id="cp-url" type="url" placeholder="https://www.mercadolibre.com.mx/..."></label></div>
+  <div class="share"><button type="button" class="btn" id="cp-publish">Publicar cupón</button></div>
+  <p id="cp-msg" class="muted">Se abrirá GitHub con todo listo: toca <b>Submit new issue</b>. En unos 3 minutos aparece el botón 🎟️ Cupones en el sitio.</p>
+  <h2>Cupones publicados</h2>
+  ${allCoupons.length ? `<ul class="cp-list">${allCoupons.map((c) => `<li><span>${couponExpired(c) ? '⌛ ' : ''}${e((c.text ?? c.title ?? '').slice(0, 90))}${c.expiresAt ? ` <small class="muted">· hasta ${e(c.expiresAt.slice(0, 10))}</small>` : ''}</span>${c.id ? `<button type="button" class="sh-copy" data-remove-coupon="${e(c.id)}">Quitar</button>` : ''}</li>`).join('')}</ul>` : '<p class="muted">Ninguno por ahora.</p>'}
+  <p class="muted">Otras herramientas: <a href="/enlaces/">enlaces oficiales de afiliado</a> · <a href="/compartir/">compartir por WhatsApp</a></p>
+  <script type="application/json" id="admin-data">${JSON.stringify({ repo: config.githubRepo }).replace(/</g, '\\u003c')}</script>`)}</div>`,
+}));
+
 // ---------- Official affiliate links helper (private, not indexed) ----------
 // Mercado Libre only guarantees clicks on links made by its own generator (meli.la), and there is no API for it.
 // This page lists the top deals still missing one: copy -> paste in the generator -> paste the results back -> save.
@@ -342,7 +387,7 @@ write('/enlaces/', layout({
   description: 'Herramienta privada.',
   pathname: '/enlaces/',
   noindex: true,
-  body: `<div class="wrap prose links-tool">
+  body: `<div class="wrap prose links-tool">${adminGate(`
   <h1>Enlaces oficiales de afiliado</h1>
   <p><b>${linked}</b> de ${active.length} ofertas activas ya tienen enlace oficial (meli.la). Faltan ${active.length - linked}; aquí están las ${needLinks.length} más importantes.</p>
   ${needLinks.length ? `<h2>1. Copia estos enlaces</h2>
@@ -355,7 +400,7 @@ write('/enlaces/', layout({
   <p id="links-msg" class="muted"></p>
   <div class="share"><button type="button" class="btn" id="save-links">Guardar enlaces</button></div>
   <p class="muted">Se abrirá GitHub con todo listo: solo toca <b>Submit new issue</b>. En unos minutos el sitio y Telegram usarán esos enlaces.</p>
-  <script type="application/json" id="links-data">${JSON.stringify({ ids: needLinks.map((d) => d.id), repo: config.githubRepo }).replace(/</g, '\\u003c')}</script>` : '<p>Todas las ofertas activas tienen enlace oficial. 🎉</p>'}
+  <script type="application/json" id="links-data">${JSON.stringify({ ids: needLinks.map((d) => d.id), repo: config.githubRepo }).replace(/</g, '\\u003c')}</script>` : '<p>Todas las ofertas activas tienen enlace oficial. 🎉</p>'}`)}
 </div>`,
 }));
 
@@ -380,7 +425,7 @@ write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 ${sitemapPaths.map((p) => `<url><loc>${abs(p)}</loc><lastmod>${lastmod}</lastmod></url>`).join('\n')}
 </urlset>
 `);
-write('robots.txt', SAMPLE ? 'User-agent: *\nDisallow: /\n' : `User-agent: *\nAllow: /\nDisallow: /compartir/\nDisallow: /enlaces/\n\nSitemap: ${abs('/sitemap.xml')}\n`);
+write('robots.txt', SAMPLE ? 'User-agent: *\nDisallow: /\n' : `User-agent: *\nAllow: /\nDisallow: /compartir/\nDisallow: /enlaces/\nDisallow: /publicar/\n\nSitemap: ${abs('/sitemap.xml')}\n`);
 write('version.json', JSON.stringify({ buildId, updatedAt: lastmod, active: active.length }));
 write('.nojekyll', '');
 

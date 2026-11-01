@@ -171,9 +171,21 @@ svg { width: 1em; height: 1em; flex: none; }
 .notice { padding: 12px 14px; border-radius: 12px; background: var(--hot-bg); color: var(--hot); font-weight: 600; margin: 0 0 14px; }
 .share { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 20px; font-size: 14px; color: var(--muted); }
 .share a, .share button { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--text); font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; }
+.share .btn { background: var(--brand); color: var(--brand-ink); border-color: transparent; }
 .share .btn.share-wa, .share a.share-wa:hover { background: #1fa855; border-color: #1fa855; color: #fff; }
 .share a.share-tg:hover { background: #229ed9; border-color: #229ed9; color: #fff; }
 
+.coupon-btn { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; padding: 7px 12px; border-radius: 999px; border: 1px dashed #E5252A; color: #E5252A; font-size: 14px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.coupon-btn small { background: #E5252A; color: #fff; border-radius: 999px; padding: 0 7px; font-size: 12px; }
+.top-nav + .coupon-btn { margin-left: 0; }
+.coupon-text p { margin: 0; overflow-wrap: anywhere; }
+.coupon-text p + p { margin-top: 6px; }
+.admin-gate .gate-form { display: grid; gap: 10px; max-width: 320px; margin: 40px auto; }
+.admin-gate input, .cp-row input { height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--text); font: inherit; width: 100%; }
+.cp-row { display: grid; grid-template-columns: 1fr 2fr; gap: 12px; margin-top: 12px; }
+.cp-row label { display: grid; gap: 6px; font-weight: 600; font-size: 14px; }
+.cp-list { list-style: none; padding: 0; display: grid; gap: 8px; }
+.cp-list li { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
 .coupons { display: grid; gap: 12px; margin: 20px 0 48px; }
 .coupon { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding: 18px; background: var(--surface); border: 1px dashed var(--brand); border-radius: var(--radius); }
 .coupon h3 { margin: 0; }
@@ -219,6 +231,8 @@ svg { width: 1em; height: 1em; flex: none; }
 @media (max-width: 760px) {
   .top-nav { display: none; }
   .top .join { margin-left: auto; }
+  .coupon-btn + .join { margin-left: 0; }
+  .cp-row { grid-template-columns: 1fr; }
   .top .join a { padding: 8px; font-size: 0; gap: 0; }
   .top .join svg { width: 18px; height: 18px; }
   .hero { padding: 28px 0 22px; }
