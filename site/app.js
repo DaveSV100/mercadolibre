@@ -52,9 +52,11 @@
     const text = btn.dataset.copy ?? document.getElementById(btn.dataset.copyFrom)?.value ?? '';
     try {
       await navigator.clipboard.writeText(text);
-      const label = btn.textContent;
-      btn.textContent = '¡Copiado!';
-      setTimeout(() => { btn.textContent = label; }, 1500);
+      const target = btn.querySelector('[data-copy-label]') ?? btn;
+      const label = target.textContent;
+      target.textContent = '¡Copiado!';
+      btn.classList.add('copied');
+      setTimeout(() => { target.textContent = label; btn.classList.remove('copied'); }, 1500);
     } catch { /* clipboard not available */ }
   });
 

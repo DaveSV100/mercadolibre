@@ -1,9 +1,9 @@
 [
   {
-    "title": "10% de descuento en tu primera compra (EJEMPLO)",
-    "description": "Compra mínima de $500. Cupón de ejemplo.",
-    "code": "EJEMPLO10",
-    "url": "https://www.mercadolibre.com.mx/",
-    "expiresAt": "2099-01-01"
+    "id": "sample",
+    "text": "Copia cupones:\n\n🎟️Cupón: EJEMPLO10\n10% de descuento\nCompra minima: $700\nDescuento máximo: $90\n\n🎟️Cupón: EJEMPLO500\n$500 de descuento\nCompra minima: $5.000\nDescuento máximo: $500\n\n*CUPONES ESPECIALES*\n🎟️Cupón: EJEMPLOVIP\n10% de descuento\nCompra minima: $600\nDescuento máximo: $80\nProductos que aplican: https://listado.mercadolibre.com.mx/_Container_ejemplo\nVigencia: Hasta 30 nov\n*Recuerda validar en los productos que aplican*",
+    "expiresAt": "2099-12-31",
+    "url": null,
+    "createdAt": "2099-01-01T00:00:00Z"
   }
 ]

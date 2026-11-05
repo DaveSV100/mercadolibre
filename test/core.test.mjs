@@ -49,3 +49,13 @@ test('helpers', () => {
   assert.equal(affiliateUrl({ id: 'MLM1', url: 'https://www.mercadolibre.com.mx/p/MLM1' }, cfg), 'https://www.mercadolibre.com.mx/p/MLM1?matt_word=yo');
   assert.equal(affiliateUrl({ id: 'MLM1', url: 'https://x/p/MLM1' }, cfg, { MLM1: 'https://meli.la/abc' }), 'https://meli.la/abc');
 });
+
+test('parses pasted coupon text into cards', async () => {
+  const { parseCouponText } = await import('../scripts/lib/coupons.mjs');
+  const { coupons, notes } = parseCouponText('Copia cupones:\n\n🎟️Cupón: PREDDHOT\n10% de descuento\nCompra minima: $700\nDescuento máximo: $90\n\n*CUPONES ESPECIALES*\n🎟️Cupón: PREDDWOW\n$1.200 de descuento\nCompra minima: $12.000\nProductos que aplican: https://listado.mercadolibre.com.mx/_Container_x\nVigencia: Hasta 30 nov\n*Recuerda validar en los productos que aplican*');
+  assert.deepEqual(coupons.map((c) => [c.code, c.benefit, c.minPurchase, c.maxDiscount, c.featured]),
+    [['PREDDHOT', '10%', '$700', '$90', false], ['PREDDWOW', '$1,200', '$12,000', null, true]]);
+  assert.equal(coupons[1].appliesUrl, 'https://listado.mercadolibre.com.mx/_Container_x');
+  assert.equal(coupons[1].validity, 'Hasta 30 nov');
+  assert.deepEqual(notes, ['Recuerda validar en los productos que aplican']);
+});

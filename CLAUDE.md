@@ -26,4 +26,5 @@ Telegram posts deals with an official link first; `telegram.onlyOfficialLinks` (
 Coupons: `/publicar/` (private, behind a code whose SHA-256 is `adminCodeSha256`; the code screen only hides the tools,
 the real protection is the owner-only check in the workflows) opens an issue titled "Cupón…" or "Quitar cupón";
 `.github/workflows/publish-coupon.yml` runs `scripts/save-coupon.mjs` on `data/coupons.json`. The header 🎟️ Cupones
-button and `/cupones/` exist only while some coupon is still valid (through its `expiresAt` day, Mexico City time).
+button and `/cupones/` exist only while the coupon post is still valid (through its `expiresAt` day, Mexico City time).
+Each new post replaces the previous one; `scripts/lib/coupons.mjs` parses the pasted "🎟️Cupón: CODE" blocks into cards.

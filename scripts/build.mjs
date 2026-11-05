@@ -7,6 +7,7 @@ import {
   ALL_CATEGORIES, ROOT, affiliateConfigured, affiliateUrl, categoryBySlug, dealPath,
   escapeHtml as e, formatPrice, isActive, loadConfig, readJson,
 } from './lib/core.mjs';
+import { parseCouponText } from './lib/coupons.mjs';
 
 const SAMPLE = process.argv.includes('--sample');
 const config = loadConfig();
@@ -20,8 +21,13 @@ const deals = SAMPLE
   : readJson('data/deals.json', []);
 // Coupons are valid through the end of their expiry day, Mexico City time.
 const couponExpired = (c) => c.expiresAt && Date.parse(`${c.expiresAt.slice(0, 10)}T23:59:59-06:00`) < now;
-const coupons = (SAMPLE ? readJson('samples/sample-coupons.json', []) : readJson('data/coupons.json', []))
-  .filter((c) => !couponExpired(c));
+// Only the newest coupon post is shown: each one replaces the previous (see scripts/save-coupon.mjs).
+const couponPost = (SAMPLE ? readJson('samples/sample-coupons.json', []) : readJson('data/coupons.json', []))
+  .filter((c) => !couponExpired(c))
+  .sort((a, b) => String(b.createdAt ?? '').localeCompare(String(a.createdAt ?? '')))[0];
+const couponText = couponPost ? couponPost.text ?? [couponPost.title, couponPost.description].filter(Boolean).join('\n') : '';
+const parsedCoupons = parseCouponText(couponText);
+const couponCount = couponPost ? parsedCoupons.coupons.length || 1 : 0;
 const links = readJson('data/affiliate-links.json', {});
 
 const byScore = (a, b) => b.discount - a.discount || b.lastSeen.localeCompare(a.lastSeen);
@@ -143,7 +149,7 @@ ${SAMPLE ? '<div class="sample">Vista previa con productos de EJEMPLO. No son of
   <div class="wrap top-in">
     <a class="logo" href="/" aria-label="${e(config.siteName)} inicio">${LOGO_MARK}<span>${e(config.siteName.replace(/Ofertas$/, ''))}<b>Ofertas</b></span></a>
     <nav class="top-nav"><a href="/acerca/">Cómo funciona</a></nav>
-    ${coupons.length ? `<a class="coupon-btn" href="/cupones/">🎟️ Cupones <small>${coupons.length}</small></a>` : ''}
+    ${couponCount ? `<a class="coupon-btn" href="/cupones/">🎟️ Cupones <small>${couponCount}</small></a>` : ''}
     ${joinButtons()}
   </div>
 </header>
@@ -156,7 +162,7 @@ ${body}
   <div class="wrap">
     <p><strong>${e(config.siteName)}</strong> es un sitio independiente que reúne ofertas publicadas en Mercado Libre ${e(market.name)}. No somos Mercado Libre ni estamos operados por ellos.</p>
     <p>Participamos en el programa de Afiliados de Mercado Libre: si compras desde nuestros enlaces podemos recibir una comisión, sin costo extra para ti. Los precios y la disponibilidad pueden cambiar en cualquier momento; confirma siempre el precio final en Mercado Libre.</p>
-    <p class="foot-links"><a href="/">Inicio</a><a href="/acerca/">Cómo funciona</a>${coupons.length ? '<a href="/cupones/">Cupones</a>' : ''}<a href="/rss.xml">RSS</a></p>
+    <p class="foot-links"><a href="/">Inicio</a><a href="/acerca/">Cómo funciona</a>${couponCount ? '<a href="/cupones/">Cupones</a>' : ''}<a href="/rss.xml">RSS</a></p>
     <p class="muted">Actualizado: ${e(updatedLabel)}</p>
   </div>
 </footer>
@@ -276,79 +282,45 @@ for (const d of deals) {
 }
 
 // ---------- coupons ----------
-// Each coupon is the text the owner pasted on /publicar/ (plus optional expiry and link).
+// The newest coupon post (pasted on /publicar/) shown as cards. Text that doesn't look like coupons is shown as is.
 const COUPONS_URL = affiliateUrl({ id: '', url: `https://www.${market.domain}/cupones` }, config);
 const tagMlLinks = (url) => (/^https:\/\/(www\.)?mercadolibre\./.test(url) ? affiliateUrl({ id: '', url }, config) : url);
 const linkify = (text) => e(text).replace(/https?:\/\/[^\s<]+/g, (u) => `<a href="${tagMlLinks(u.replace(/&amp;/g, '&'))}" ${buyAttrs}>${u}</a>`).replace(/\n/g, '<br>');
-// Codes: the word after "código/cupón/code:", or an all-caps word mixing letters and digits.
-function couponCodes(text) {
-  const found = new Set();
-  for (const m of text.matchAll(/(?:c[óo]digo|cup[óo]n|code)\s*:?\s*([A-Z0-9][A-Z0-9_-]{3,24})\b/gi)) if (/\d|[A-Z]{4,}/.test(m[1])) found.add(m[1].toUpperCase());
-  for (const m of text.matchAll(/\b(?=[A-Z0-9]*\d)(?=[A-Z0-9]*[A-Z])[A-Z0-9]{5,20}\b/g)) found.add(m[0]);
-  return [...found];
-}
-if (coupons.length) {
+const ticket = (c) => {
+  const pct = /%$/.test(c.benefit ?? '');
+  return `<article class="ticket${c.featured ? ' featured' : ''}">
+  ${c.featured ? '<span class="ticket-badge">⭐ Especial</span>' : ''}
+  <div class="ticket-head"><span class="ticket-amount">${e(c.benefit ?? '🎟️')}</span><span class="ticket-label">${c.benefit ? (pct ? 'de descuento' : 'de descuento directo') : 'cupón'}</span></div>
+  <ul class="ticket-meta">
+    ${c.minPurchase ? `<li><span>Compra mínima</span><b>${e(c.minPurchase)}</b></li>` : ''}
+    ${c.maxDiscount && pct ? `<li><span>Descuento máximo</span><b>${e(c.maxDiscount)}</b></li>` : ''}
+    ${c.validity ? `<li><span>Vigencia</span><b>${e(c.validity)}</b></li>` : ''}
+  </ul>
+  ${c.appliesUrl ? `<a class="ticket-link" href="${e(tagMlLinks(c.appliesUrl))}" ${buyAttrs}>Ver productos que aplican →</a>` : ''}
+  <button type="button" class="ticket-code" data-copy="${e(c.code)}" aria-label="Copiar código ${e(c.code)}"><span class="ticket-code-text">${e(c.code)}</span><span class="ticket-copy" data-copy-label>Copiar</span></button>
+</article>`;
+};
+if (couponPost) {
+  const until = couponPost.expiresAt ? new Intl.DateTimeFormat(market.locale, { day: 'numeric', month: 'long', timeZone: timeZoneFor(config.country) }).format(Date.parse(`${couponPost.expiresAt.slice(0, 10)}T12:00:00-06:00`)) : null;
+  const { coupons: cards, notes } = parsedCoupons;
+  cards.sort((a, b) => b.featured - a.featured);
   write('/cupones/', layout({
     title: 'Cupones y códigos de descuento de Mercado Libre',
-    description: `Cupones y códigos promocionales vigentes para Mercado Libre ${market.name}.`,
+    description: `${cards.length ? `${cards.length} códigos de descuento` : 'Cupones'} vigentes para Mercado Libre ${market.name}${until ? ` hasta el ${until}` : ''}.`,
     pathname: '/cupones/',
-    body: `<div class="wrap"><header class="page-head"><h1>🎟️ Cupones</h1><p class="lead">Cupones vigentes de Mercado Libre ${e(market.name)}. Algunos cupones son personales: revisa también <a href="${e(COUPONS_URL)}" ${buyAttrs}>tus cupones en Mercado Libre</a>.</p></header>
-  <div class="coupons">${coupons.map((c) => {
-    const text = c.text ?? [c.title, c.description].filter(Boolean).join('\n');
-    const codes = c.code ? [c.code] : couponCodes(text);
-    return `<div class="coupon"><div class="coupon-text"><p>${linkify(text)}</p>${c.expiresAt ? `<p class="muted">Válido hasta: ${e(dateFmt.format(Date.parse(`${c.expiresAt.slice(0, 10)}T12:00:00-06:00`)))}</p>` : ''}</div>
-    <div class="coupon-act">${codes.map((code) => `<button type="button" class="code" data-copy="${e(code)}" title="Copiar código">${e(code)}</button>`).join('')}<a class="btn" href="${e(c.url ? tagMlLinks(c.url) : COUPONS_URL)}" ${buyAttrs}>Usar en Mercado Libre</a></div></div>`;
-  }).join('')}</div></div>`,
+    body: `<div class="wrap cp-page">
+  <header class="cp-hero">
+    <h1>🎟️ Cupones</h1>
+    <p class="lead">Copia un código y pégalo al pagar en Mercado Libre.${until ? ` <b>Válidos hasta el ${e(until)}.</b>` : ''}</p>
+  </header>
+  ${cards.length ? `<div class="ticket-grid">${cards.map(ticket).join('')}</div>` : `<div class="coupon"><div class="coupon-text"><p>${linkify(couponText)}</p></div></div>`}
+  ${notes.map((n) => `<p class="cp-note">ℹ️ ${e(n)}.</p>`).join('')}
+  <ol class="cp-steps"><li><b>Toca un código</b> para copiarlo.</li><li><b>Agrega tus productos</b> al carrito en Mercado Libre.</li><li>Al pagar, en <b>“Agregar cupón”</b>, pega el código.</li></ol>
+  <p class="cp-cta"><a class="btn btn-xl" href="${e(couponPost.url ? tagMlLinks(couponPost.url) : COUPONS_URL)}" ${buyAttrs}>Ir a Mercado Libre</a></p>
+  <p class="muted cp-fine">Cada cupón aplica solo en productos participantes y puede agotarse antes de su fecha. Algunos cupones son personales: revisa también <a href="${e(COUPONS_URL)}" ${buyAttrs}>tus cupones en Mercado Libre</a>.</p>
+</div>`,
   }));
 }
-
-// ---------- about ----------
-write('/acerca/', layout({
-  title: 'Cómo funciona',
-  description: `Cómo encontramos las ofertas de Mercado Libre que publicamos en ${config.siteName}.`,
-  pathname: '/acerca/',
-  body: `<div class="wrap prose">
-  <h1>Cómo funciona ${e(config.siteName)}</h1>
-  <p>Revisamos automáticamente las secciones públicas de ofertas de Mercado Libre ${e(market.name)} varias veces al día y publicamos solo productos cuyo precio actual es menor que su precio anterior.</p>
-  <h2>¿Cuánto cuesta?</h2><p>Nada. Compras directamente en Mercado Libre, con sus mismas garantías, envíos y medios de pago.</p>
-  <h2>¿Cómo ganamos dinero?</h2><p>Participamos en el programa de Afiliados de Mercado Libre. Cuando compras desde uno de nuestros enlaces podemos recibir una pequeña comisión, sin costo adicional para ti. Esto no cambia qué ofertas mostramos.</p>
-  <h2>¿Los precios son exactos?</h2><p>Mostramos el precio que vimos en la fecha indicada en cada oferta. Las ofertas pueden terminar o cambiar en cualquier momento, sobre todo las relámpago. Confirma siempre el precio final antes de pagar.</p>
-  <h2>¿Son parte de Mercado Libre?</h2><p>No. Somos un sitio independiente. "Mercado Libre" es una marca de su respectivo dueño.</p>
-  <h2>Privacidad</h2><p>No pedimos registro ni guardamos datos personales. Las preferencias de filtros solo se usan dentro de tu navegador.</p>
-  ${joinButtons() ? `<h2>Recibe las ofertas al instante</h2>${joinButtons()}` : ''}
-</div>`,
-}));
-
-// ---------- WhatsApp share helper (not indexed) ----------
-// One message per deal: WhatsApp previews only the first link of a message, so each deal goes alone to show its photo.
-const fresh = active.filter((d) => now - Date.parse(d.firstSeen) < 864e5);
-const shareDeals = (fresh.length >= 10 ? fresh : active).slice(0, 40);
-const shareText = (d) => `🔥 ${d.discount ? `*-${d.discount}%* ` : ''}${d.title}\n💰 *${price(d.price)}*${d.originalPrice ? ` ~${price(d.originalPrice)}~` : ''}${d.freeShipping ? ' · Envío gratis' : ''}\n👉 ${abs(d.page)}`;
-const digest = [`🔥 *Ofertas de hoy en Mercado Libre* 🔥`, '',
-  ...shareDeals.slice(0, 10).map((d) => `${d.discount ? `*-${d.discount}%* ` : ''}${d.title.slice(0, 80)}\n💰 ${price(d.price)}${d.originalPrice ? ` ~${price(d.originalPrice)}~` : ''}\n👉 ${abs(d.page)}\n`),
-  `Más ofertas: ${config.baseUrl}`].join('\n');
-write('/compartir/', layout({
-  title: 'Compartir ofertas',
-  description: 'Ofertas listas para compartir por WhatsApp.',
-  pathname: '/compartir/',
-  noindex: true,
-  body: `<div class="wrap share-page">
-  <header class="page-head"><h1>Compartir por WhatsApp</h1>
-  <p class="lead">Toca <b>WhatsApp</b> en cada oferta y elige tu grupo: cada una se envía con su foto. Las que ya enviaste quedan marcadas.</p></header>
-  <ol class="sh-list">${shareDeals.map((d) => `<li class="sh-item" data-sent-key="${d.id}">
-    <a class="sh-img" href="${d.page}">${media(d)}</a>
-    <div class="sh-info"><p class="sh-title">${d.discount ? `<b>-${d.discount}%</b> ` : ''}${e(d.title)}</p><p class="sh-price">${price(d.price)}${d.originalPrice ? ` <s>${price(d.originalPrice)}</s>` : ''}</p></div>
-    <div class="sh-act">
-      <a class="sh-wa" href="https://wa.me/?text=${encodeURIComponent(shareText(d))}" target="_blank" rel="noopener" data-mark-sent>${icon.whatsapp}<span>WhatsApp</span></a>
-      <button type="button" class="sh-copy" data-copy="${e(shareText(d))}">Copiar</button>
-    </div>
-  </li>`).join('')}</ol>
-  <details class="sh-digest"><summary>Mensaje con las 10 mejores en uno solo</summary>
-    <textarea id="digest" rows="14" readonly>${e(digest)}</textarea>
-    <div class="share"><a class="btn share-wa" href="https://wa.me/?text=${encodeURIComponent(digest)}" target="_blank" rel="noopener">${icon.whatsapp}Enviar por WhatsApp</a><button type="button" data-copy-from="digest">Copiar mensaje</button></div>
-  </details>
-</div>`,
-}));
 
 // ---------- Owner tools (private, not indexed) ----------
 // The code screen only hides the tools from visitors. What really protects publishing is that the GitHub workflows
@@ -357,7 +329,7 @@ const adminGate = (inner) => `<div class="admin-gate" data-admin-gate="${config.
   <form class="gate-form"><label for="gate-code">Código de acceso</label><input id="gate-code" type="password" inputmode="numeric" autocomplete="current-password" required><button class="btn" type="submit">Entrar</button><p class="gate-msg muted" aria-live="polite"></p></form>
   <div data-admin hidden>${inner}</div></div>`;
 
-const allCoupons = SAMPLE ? coupons : readJson('data/coupons.json', []);
+const allCoupons = couponPost ? [couponPost] : [];
 write('/publicar/', layout({
   title: 'Publicar cupones',
   description: 'Herramienta privada.',
@@ -369,9 +341,10 @@ write('/publicar/', layout({
   <label for="cp-text"><b>Texto del cupón</b> (pégalo tal cual)</label>
   <textarea id="cp-text" rows="7" placeholder="Ej.: 15% OFF en Electrónica con el código MELI15. Compra mínima $999."></textarea>
   <div class="cp-row"><label>Válido hasta<input id="cp-until" type="date"></label><label>Enlace (opcional)<input id="cp-url" type="url" placeholder="https://www.mercadolibre.com.mx/..."></label></div>
+  <p class="muted">Al publicar, el texto nuevo <b>reemplaza</b> a los cupones anteriores.</p>
   <div class="share"><button type="button" class="btn" id="cp-publish">Publicar cupón</button></div>
   <p id="cp-msg" class="muted">Se abrirá GitHub con todo listo: toca <b>Submit new issue</b>. En unos 3 minutos aparece el botón 🎟️ Cupones en el sitio.</p>
-  <h2>Cupones publicados</h2>
+  <h2>Cupones publicados ahora</h2>
   ${allCoupons.length ? `<ul class="cp-list">${allCoupons.map((c) => `<li><span>${couponExpired(c) ? '⌛ ' : ''}${e((c.text ?? c.title ?? '').slice(0, 90))}${c.expiresAt ? ` <small class="muted">· hasta ${e(c.expiresAt.slice(0, 10))}</small>` : ''}</span>${c.id ? `<button type="button" class="sh-copy" data-remove-coupon="${e(c.id)}">Quitar</button>` : ''}</li>`).join('')}</ul>` : '<p class="muted">Ninguno por ahora.</p>'}
   <p class="muted">Otras herramientas: <a href="/enlaces/">enlaces oficiales de afiliado</a> · <a href="/compartir/">compartir por WhatsApp</a></p>
   <script type="application/json" id="admin-data">${JSON.stringify({ repo: config.githubRepo }).replace(/</g, '\\u003c')}</script>`)}</div>`,
@@ -420,7 +393,7 @@ ${rssItems.map((d) => `<item><title>${e(`${d.discount ? `-${d.discount}% ` : ''}
 </channel></rss>
 `);
 
-const sitemapPaths = ['/', '/acerca/', ...(coupons.length ? ['/cupones/'] : []), ...categories.filter((c) => c.deals.length).map((c) => `/categoria/${c.slug}/`), ...active.map((d) => d.page)];
+const sitemapPaths = ['/', '/acerca/', ...(couponCount ? ['/cupones/'] : []), ...categories.filter((c) => c.deals.length).map((c) => `/categoria/${c.slug}/`), ...active.map((d) => d.page)];
 const lastmod = new Date(now).toISOString();
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

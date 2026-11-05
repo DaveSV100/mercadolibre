@@ -186,6 +186,34 @@ svg { width: 1em; height: 1em; flex: none; }
 .cp-row label { display: grid; gap: 6px; font-weight: 600; font-size: 14px; }
 .cp-list { list-style: none; padding: 0; display: grid; gap: 8px; }
 .cp-list li { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+/* coupons page */
+.cp-page { max-width: 980px; padding-bottom: 48px; }
+.cp-hero { padding: 22px 0 6px; }
+.cp-hero h1 { margin: 0; font-size: clamp(28px, 5vw, 40px); letter-spacing: -0.03em; }
+.cp-hero .lead { margin-top: 8px; }
+.ticket-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin: 18px 0; }
+.ticket { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 18px 18px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; }
+.ticket::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 6px; background: #E5252A; }
+.ticket.featured { border-color: #E5252A; }
+.ticket-badge { align-self: flex-start; padding: 3px 10px; border-radius: 999px; background: var(--gold); color: #2b2200; font-size: 12px; font-weight: 800; }
+.ticket-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.ticket-amount { font-size: 40px; font-weight: 900; letter-spacing: -0.03em; line-height: 1; color: #E5252A; }
+.ticket-label { color: var(--muted); font-weight: 600; }
+.ticket-meta { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 14px; }
+.ticket-meta li { display: flex; justify-content: space-between; gap: 10px; padding-bottom: 6px; border-bottom: 1px dashed var(--line); }
+.ticket-meta span { color: var(--muted); }
+.ticket-link { font-size: 14px; font-weight: 700; color: var(--brand); text-decoration: none; }
+.ticket-code { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; min-height: 52px; padding: 6px 6px 6px 16px; border: 2px dashed #E5252A; border-radius: 14px; background: color-mix(in srgb, #E5252A 7%, var(--surface)); color: var(--text); font: inherit; cursor: pointer; }
+.ticket-code-text { font: 800 19px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.04em; overflow-wrap: anywhere; text-align: left; }
+.ticket-copy { flex: none; padding: 10px 14px; border-radius: 10px; background: #E5252A; color: #fff; font-weight: 800; font-size: 14px; }
+.ticket-code.copied { border-style: solid; }
+.ticket-code.copied .ticket-copy { background: var(--ok); }
+.cp-note { margin: 4px 0; color: var(--muted); font-size: 14px; }
+.cp-steps { margin: 22px 0 0; padding: 16px 16px 16px 36px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; display: grid; gap: 6px; font-size: 15px; }
+.cp-cta { margin: 18px 0 8px; }
+.cp-cta .btn { max-width: 420px; }
+.cp-fine { font-size: 13px; }
+
 .coupons { display: grid; gap: 12px; margin: 20px 0 48px; }
 .coupon { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding: 18px; background: var(--surface); border: 1px dashed var(--brand); border-radius: var(--radius); }
 .coupon h3 { margin: 0; }
@@ -230,9 +258,15 @@ svg { width: 1em; height: 1em; flex: none; }
 
 @media (max-width: 760px) {
   .top-nav { display: none; }
+  .top-in { gap: 8px; }
+  .logo { font-size: 18px; gap: 8px; min-width: 0; }
+  .logo-mark { width: 36px; height: 25px; }
+  .coupon-btn { padding: 6px 9px; font-size: 13px; gap: 4px; }
   .top .join { margin-left: auto; }
   .coupon-btn + .join { margin-left: 0; }
   .cp-row { grid-template-columns: 1fr; }
+  .ticket-grid { grid-template-columns: 1fr; gap: 12px; }
+  .ticket-amount { font-size: 36px; }
   .top .join a { padding: 8px; font-size: 0; gap: 0; }
   .top .join svg { width: 18px; height: 18px; }
   .hero { padding: 28px 0 22px; }
