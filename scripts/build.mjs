@@ -89,7 +89,7 @@ function card(deal) {
     <h3 class="card-title"><a href="${deal.page}">${e(deal.title)}</a></h3>
     <div class="prices"><span class="now">${price(deal.price)}</span>${deal.originalPrice ? `<s>${price(deal.originalPrice)}</s>` : ''}</div>
     <div class="meta">${deal.freeShipping ? `<span class="ship">${icon.truck}Envío gratis</span>` : ''}<time datetime="${e(deal.firstSeen)}" data-rel></time></div>
-    <a class="btn" href="${e(deal.buyUrl)}" ${buyAttrs}>Ver oferta</a>
+    <a class="btn" href="${e(deal.buyUrl)}" ${buyAttrs} data-umami-event="ir-a-mercadolibre" data-umami-event-lugar="lista" data-umami-event-producto="${e(deal.id)}">Ver oferta</a>
   </div>
 </article>`;
 }
@@ -112,10 +112,16 @@ function chips(current) {
 function joinButtons() {
   const { telegramUrl, whatsappUrl } = config.social;
   if (!telegramUrl && !whatsappUrl) return '';
-  return `<div class="join">${telegramUrl ? `<a class="join-tg" href="${e(telegramUrl)}" target="_blank" rel="noopener">${icon.telegram}Telegram</a>` : ''}${whatsappUrl ? `<a class="join-wa" href="${e(whatsappUrl)}" target="_blank" rel="noopener">${icon.whatsapp}WhatsApp</a>` : ''}</div>`;
+  return `<div class="join">${telegramUrl ? `<a class="join-tg" href="${e(telegramUrl)}" target="_blank" rel="noopener" data-umami-event="unirse-telegram">${icon.telegram}Telegram</a>` : ''}${whatsappUrl ? `<a class="join-wa" href="${e(whatsappUrl)}" target="_blank" rel="noopener" data-umami-event="unirse-whatsapp">${icon.whatsapp}WhatsApp</a>` : ''}</div>`;
 }
 
-function layout({ title, description, pathname, body, jsonld = [], image, noindex = false, type = 'website' }) {
+// Visit and click statistics (Umami Cloud, no cookies). Off until site.config.json -> analytics.umamiWebsiteId is set,
+// never in sample builds, and not on the owner's private pages.
+const analyticsTag = (track) => (config.analytics?.umamiWebsiteId && !SAMPLE && track
+  ? `<script defer src="https://cloud.umami.is/script.js" data-website-id="${e(config.analytics.umamiWebsiteId)}" data-domains="${e(new URL(config.baseUrl).hostname)}"></script>`
+  : '');
+
+function layout({ title, description, pathname, body, jsonld = [], image, noindex = false, type = 'website', track = true }) {
   const fullTitle = pathname === '/' ? `${config.siteName} · ${title}` : `${title} | ${config.siteName}`;
   const ogImage = image || abs('/og.png');
   return `<!doctype html>
@@ -168,6 +174,7 @@ ${body}
 </footer>
 <script>window.BUILD_ID=${JSON.stringify(buildId)};window.BASE=${JSON.stringify(BASE)}</script>
 <script src="/app.js?v=${buildId}" defer></script>
+${analyticsTag(track)}
 </body>
 </html>
 `;
@@ -266,12 +273,12 @@ for (const d of deals) {
         ${d.rating ? `<li>⭐ ${d.rating} de calificación</li>` : ''}
         <li>🕒 Precio visto el ${e(dateFmt.format(Date.parse(d.lastSeen)))}</li>
       </ul>
-      <a class="btn btn-xl" href="${e(d.buyUrl)}" ${buyAttrs}>${d.active ? 'Ver oferta en Mercado Libre' : 'Ver precio actual en Mercado Libre'}</a>
+      <a class="btn btn-xl" href="${e(d.buyUrl)}" ${buyAttrs} data-umami-event="ir-a-mercadolibre" data-umami-event-lugar="pagina-oferta" data-umami-event-producto="${e(d.id)}">${d.active ? 'Ver oferta en Mercado Libre' : 'Ver precio actual en Mercado Libre'}</a>
       <p class="fine">El precio final, el envío y la disponibilidad se confirman en Mercado Libre. Enlace de afiliado.</p>
       <div class="share">
         <span>Compartir:</span>
-        <a class="share-wa" href="https://wa.me/?text=${encodeURIComponent(`${shareText}\n${pageUrl}`)}" target="_blank" rel="noopener">${icon.whatsapp}WhatsApp</a>
-        <a class="share-tg" href="https://t.me/share/url?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(shareText)}" target="_blank" rel="noopener">${icon.telegram}Telegram</a>
+        <a class="share-wa" href="https://wa.me/?text=${encodeURIComponent(`${shareText}\n${pageUrl}`)}" target="_blank" rel="noopener" data-umami-event="compartir-whatsapp">${icon.whatsapp}WhatsApp</a>
+        <a class="share-tg" href="https://t.me/share/url?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(shareText)}" target="_blank" rel="noopener" data-umami-event="compartir-telegram">${icon.telegram}Telegram</a>
         <button type="button" data-copy="${e(pageUrl)}">Copiar enlace</button>
       </div>
     </div>
@@ -297,7 +304,7 @@ const ticket = (c) => {
     ${c.validity ? `<li><span>Vigencia</span><b>${e(c.validity)}</b></li>` : ''}
   </ul>
   ${c.appliesUrl ? `<a class="ticket-link" href="${e(tagMlLinks(c.appliesUrl))}" ${buyAttrs}>Ver productos que aplican →</a>` : ''}
-  <button type="button" class="ticket-code" data-copy="${e(c.code)}" aria-label="Copiar código ${e(c.code)}"><span class="ticket-code-text">${e(c.code)}</span><span class="ticket-copy" data-copy-label>Copiar</span></button>
+  <button type="button" class="ticket-code" data-copy="${e(c.code)}" data-umami-event="copiar-cupon" data-umami-event-codigo="${e(c.code)}" aria-label="Copiar código ${e(c.code)}"><span class="ticket-code-text">${e(c.code)}</span><span class="ticket-copy" data-copy-label>Copiar</span></button>
 </article>`;
 };
 if (couponPost) {
@@ -316,11 +323,60 @@ if (couponPost) {
   ${cards.length ? `<div class="ticket-grid">${cards.map(ticket).join('')}</div>` : `<div class="coupon"><div class="coupon-text"><p>${linkify(couponText)}</p></div></div>`}
   ${notes.map((n) => `<p class="cp-note">ℹ️ ${e(n)}.</p>`).join('')}
   <ol class="cp-steps"><li><b>Toca un código</b> para copiarlo.</li><li><b>Agrega tus productos</b> al carrito en Mercado Libre.</li><li>Al pagar, en <b>“Agregar cupón”</b>, pega el código.</li></ol>
-  <p class="cp-cta"><a class="btn btn-xl" href="${e(couponPost.url ? tagMlLinks(couponPost.url) : COUPONS_URL)}" ${buyAttrs}>Ir a Mercado Libre</a></p>
+  <p class="cp-cta"><a class="btn btn-xl" href="${e(couponPost.url ? tagMlLinks(couponPost.url) : COUPONS_URL)}" ${buyAttrs} data-umami-event="ir-a-mercadolibre" data-umami-event-lugar="cupones">Ir a Mercado Libre</a></p>
   <p class="muted cp-fine">Cada cupón aplica solo en productos participantes y puede agotarse antes de su fecha. Algunos cupones son personales: revisa también <a href="${e(COUPONS_URL)}" ${buyAttrs}>tus cupones en Mercado Libre</a>.</p>
 </div>`,
   }));
 }
+
+// ---------- about ----------
+write('/acerca/', layout({
+  title: 'Cómo funciona',
+  description: `Cómo encontramos las ofertas de Mercado Libre que publicamos en ${config.siteName}.`,
+  pathname: '/acerca/',
+  body: `<div class="wrap prose">
+  <h1>Cómo funciona ${e(config.siteName)}</h1>
+  <p>Revisamos automáticamente las secciones públicas de ofertas de Mercado Libre ${e(market.name)} varias veces al día y publicamos solo productos cuyo precio actual es menor que su precio anterior.</p>
+  <h2>¿Cuánto cuesta?</h2><p>Nada. Compras directamente en Mercado Libre, con sus mismas garantías, envíos y medios de pago.</p>
+  <h2>¿Cómo ganamos dinero?</h2><p>Participamos en el programa de Afiliados de Mercado Libre. Cuando compras desde uno de nuestros enlaces podemos recibir una pequeña comisión, sin costo adicional para ti. Esto no cambia qué ofertas mostramos.</p>
+  <h2>¿Los precios son exactos?</h2><p>Mostramos el precio que vimos en la fecha indicada en cada oferta. Las ofertas pueden terminar o cambiar en cualquier momento, sobre todo las relámpago. Confirma siempre el precio final antes de pagar.</p>
+  <h2>¿Son parte de Mercado Libre?</h2><p>No. Somos un sitio independiente. "Mercado Libre" es una marca de su respectivo dueño.</p>
+  <h2>Privacidad</h2><p>No pedimos registro ni guardamos datos personales. Contamos visitas y clics de forma anónima y sin cookies, solo para saber qué ofertas son útiles. Las preferencias de filtros solo se usan dentro de tu navegador.</p>
+  ${joinButtons() ? `<h2>Recibe las ofertas al instante</h2>${joinButtons()}` : ''}
+</div>`,
+}));
+
+// ---------- WhatsApp share helper (not indexed) ----------
+// One message per deal: WhatsApp previews only the first link of a message, so each deal goes alone to show its photo.
+const fresh = active.filter((d) => now - Date.parse(d.firstSeen) < 864e5);
+const shareDeals = (fresh.length >= 10 ? fresh : active).slice(0, 40);
+const shareText = (d) => `🔥 ${d.discount ? `*-${d.discount}%* ` : ''}${d.title}\n💰 *${price(d.price)}*${d.originalPrice ? ` ~${price(d.originalPrice)}~` : ''}${d.freeShipping ? ' · Envío gratis' : ''}\n👉 ${abs(d.page)}`;
+const digest = [`🔥 *Ofertas de hoy en Mercado Libre* 🔥`, '',
+  ...shareDeals.slice(0, 10).map((d) => `${d.discount ? `*-${d.discount}%* ` : ''}${d.title.slice(0, 80)}\n💰 ${price(d.price)}${d.originalPrice ? ` ~${price(d.originalPrice)}~` : ''}\n👉 ${abs(d.page)}\n`),
+  `Más ofertas: ${config.baseUrl}`].join('\n');
+write('/compartir/', layout({
+  title: 'Compartir ofertas',
+  description: 'Ofertas listas para compartir por WhatsApp.',
+  pathname: '/compartir/',
+  noindex: true,
+  track: false,
+  body: `<div class="wrap share-page">
+  <header class="page-head"><h1>Compartir por WhatsApp</h1>
+  <p class="lead">Toca <b>WhatsApp</b> en cada oferta y elige tu grupo: cada una se envía con su foto. Las que ya enviaste quedan marcadas.</p></header>
+  <ol class="sh-list">${shareDeals.map((d) => `<li class="sh-item" data-sent-key="${d.id}">
+    <a class="sh-img" href="${d.page}">${media(d)}</a>
+    <div class="sh-info"><p class="sh-title">${d.discount ? `<b>-${d.discount}%</b> ` : ''}${e(d.title)}</p><p class="sh-price">${price(d.price)}${d.originalPrice ? ` <s>${price(d.originalPrice)}</s>` : ''}</p></div>
+    <div class="sh-act">
+      <a class="sh-wa" href="https://wa.me/?text=${encodeURIComponent(shareText(d))}" target="_blank" rel="noopener" data-mark-sent>${icon.whatsapp}<span>WhatsApp</span></a>
+      <button type="button" class="sh-copy" data-copy="${e(shareText(d))}">Copiar</button>
+    </div>
+  </li>`).join('')}</ol>
+  <details class="sh-digest"><summary>Mensaje con las 10 mejores en uno solo</summary>
+    <textarea id="digest" rows="14" readonly>${e(digest)}</textarea>
+    <div class="share"><a class="btn share-wa" href="https://wa.me/?text=${encodeURIComponent(digest)}" target="_blank" rel="noopener">${icon.whatsapp}Enviar por WhatsApp</a><button type="button" data-copy-from="digest">Copiar mensaje</button></div>
+  </details>
+</div>`,
+}));
 
 // ---------- Owner tools (private, not indexed) ----------
 // The code screen only hides the tools from visitors. What really protects publishing is that the GitHub workflows
@@ -335,6 +391,7 @@ write('/publicar/', layout({
   description: 'Herramienta privada.',
   pathname: '/publicar/',
   noindex: true,
+  track: false,
   body: `<div class="wrap prose">${adminGate(`
   <p class="muted">Herramientas: <a href="/enlaces/">enlaces oficiales de afiliado</a> · <a href="/compartir/">compartir por WhatsApp</a></p>
   <h1>Publicar cupones</h1>
@@ -361,6 +418,7 @@ write('/enlaces/', layout({
   description: 'Herramienta privada.',
   pathname: '/enlaces/',
   noindex: true,
+  track: false,
   body: `<div class="wrap prose links-tool">${adminGate(`
   <p class="muted">Herramientas: <a href="/publicar/">🎟️ publicar cupones</a> · <a href="/compartir/">compartir por WhatsApp</a></p>
   <h1>Enlaces oficiales de afiliado</h1>

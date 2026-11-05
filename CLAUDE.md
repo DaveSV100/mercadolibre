@@ -28,3 +28,9 @@ the real protection is the owner-only check in the workflows) opens an issue tit
 `.github/workflows/publish-coupon.yml` runs `scripts/save-coupon.mjs` on `data/coupons.json`. The header 🎟️ Cupones
 button and `/cupones/` exist only while the coupon post is still valid (through its `expiresAt` day, Mexico City time).
 Each new post replaces the previous one; `scripts/lib/coupons.mjs` parses the pasted "🎟️Cupón: CODE" blocks into cards.
+
+Statistics: Umami Cloud (cookieless). The script is added only when `analytics.umamiWebsiteId` is set, never on sample
+builds or the owner pages (`track: false`). Clicks are tracked with `data-umami-event` attributes: `ir-a-mercadolibre`
+(prop `lugar`, `producto`), `copiar-cupon` (prop `codigo`), `unirse-telegram`, `compartir-whatsapp/telegram`. Entering
+the owner code sets `umami.disabled` so the owner's own visits aren't counted. `test/build.test.mjs` fails if a page
+disappears from the build.

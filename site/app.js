@@ -96,11 +96,13 @@
     let saved = null;
     try { saved = localStorage.getItem('admin-code'); } catch { /* storage unavailable */ }
     if (saved === gate.dataset.adminGate) unlock();
+    // Don't count the owner's own visits in the statistics on this browser.
+    if (saved === gate.dataset.adminGate) try { localStorage.setItem('umami.disabled', '1'); } catch { /* storage unavailable */ }
     form.addEventListener('submit', async (ev) => {
       ev.preventDefault();
       const hash = await sha256(`infiniofertas:${form.querySelector('input').value.trim()}`);
       if (hash !== gate.dataset.adminGate) { form.querySelector('.gate-msg').textContent = 'Código incorrecto.'; return; }
-      try { localStorage.setItem('admin-code', hash); } catch { /* storage unavailable */ }
+      try { localStorage.setItem('admin-code', hash); localStorage.setItem('umami.disabled', '1'); } catch { /* storage unavailable */ }
       unlock();
     });
   });

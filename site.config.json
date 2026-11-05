@@ -6,6 +6,10 @@
   "githubRepo": "DaveSV100/mercadolibre",
   "adminCodeSha256": "e756b7e75b7df62f1e35f61d91d0585572e7c494bcdcd42c0a9186e675997b12",
 
+  "analytics": {
+    "umamiWebsiteId": ""
+  },
+
   "social": {
     "telegramUrl": "https://t.me/infiniofertas",
     "whatsappUrl": ""
