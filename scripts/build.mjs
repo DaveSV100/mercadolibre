@@ -43,6 +43,8 @@ const categories = ALL_CATEGORIES
 
 const price = (n) => formatPrice(n, market);
 const abs = (p) => config.baseUrl + p;
+const monthLabel = new Intl.DateTimeFormat(market.locale, { month: 'long', year: 'numeric', timeZone: timeZoneFor(config.country) }).format(now).replace(' de ', ' ');
+const clip = (text, max) => (text.length > max ? `${text.slice(0, max - 1).replace(/\s+\S*$/, '')}…` : text);
 const updatedLabel = new Intl.DateTimeFormat(market.locale, { dateStyle: 'medium', timeStyle: 'short', timeZone: timeZoneFor(config.country) }).format(now);
 
 function timeZoneFor(country) {
@@ -109,6 +111,16 @@ function chips(current) {
   return `<nav class="chips" aria-label="Categorías">${categories.map((c) => `<a href="/categoria/${c.slug}/"${c.slug === current ? ' aria-current="page"' : ''}>${c.emoji} ${e(c.name)}${c.deals.length ? ` <small>${c.deals.length}</small>` : ''}</a>`).join('')}</nav>`;
 }
 
+// "Join our Telegram" banner; lugar tells the statistics where it was tapped.
+function telegramBanner(lugar) {
+  if (!config.social.telegramUrl) return '';
+  return `<aside class="tg-banner">
+  <span class="tg-icon">${icon.telegram}</span>
+  <div class="tg-text"><b>Ofertas al instante en Telegram</b><span>Las mejores ofertas y cupones directo en tu celular. Gratis.</span></div>
+  <a class="tg-btn" href="${e(config.social.telegramUrl)}" target="_blank" rel="noopener" data-umami-event="unirse-telegram" data-umami-event-lugar="${lugar}">Unirme</a>
+</aside>`;
+}
+
 function joinButtons() {
   const { telegramUrl, whatsappUrl } = config.social;
   if (!telegramUrl && !whatsappUrl) return '';
@@ -122,7 +134,7 @@ const analyticsTag = (track) => (config.analytics?.umamiWebsiteId && !SAMPLE && 
   : '');
 
 function layout({ title, description, pathname, body, jsonld = [], image, noindex = false, type = 'website', track = true }) {
-  const fullTitle = pathname === '/' ? `${config.siteName} · ${title}` : `${title} | ${config.siteName}`;
+  const fullTitle = `${title} | ${config.siteName}`;
   const ogImage = image || abs('/og.png');
   return `<!doctype html>
 <html lang="${market.locale}">
@@ -195,8 +207,8 @@ const top = active.slice(0, config.deals.homeLimit);
 const bestDiscount = active[0]?.discount ?? 0;
 const lightning = active.filter((d) => d.lightning).slice(0, 8);
 write('/', layout({
-  title: 'Ofertas y descuentos de Mercado Libre hoy',
-  description: `${active.length ? `${active.length} ofertas activas con hasta ${bestDiscount}% de descuento. ` : ''}Las mejores ofertas de Mercado Libre ${market.name}, revisadas y actualizadas automáticamente varias veces al día.`,
+  title: bestDiscount ? `Ofertas Mercado Libre hoy: hasta ${bestDiscount}% de descuento` : 'Ofertas Mercado Libre hoy',
+  description: `${active.length ? `${active.length} ofertas de Mercado Libre ${market.name} con hasta ${bestDiscount}% de descuento, ` : 'Ofertas de Mercado Libre, '}revisadas cada 2 horas: celulares, electrónica, hogar y más${couponCount ? `, con cupones vigentes de ${monthLabel}` : ''}.`,
   pathname: '/',
   jsonld: [{ '@context': 'https://schema.org', '@type': 'WebSite', name: config.siteName, url: config.baseUrl, publisher: org }, itemList(top)],
   body: `<section class="hero">
@@ -210,22 +222,47 @@ write('/', layout({
 </section>
 <div class="wrap">
   ${chips()}
+  ${telegramBanner('inicio')}
   ${lightning.length >= 3 ? `<section class="section"><h2 class="h2">${icon.bolt} Ofertas relámpago</h2><div class="rail">${lightning.map(card).join('')}</div></section>` : ''}
   <section class="section"><h2 class="h2">🔥 Ofertas de hoy</h2>${grid(top)}</section>
+  <section class="seo-text">
+    <h2>Ofertas de Mercado Libre ${e(market.name)}, actualizadas cada 2 horas</h2>
+    <p>En ${e(config.siteName)} reunimos los productos más vendidos de Mercado Libre que hoy tienen un <b>descuento real</b> frente a su precio anterior. Revisamos los precios automáticamente cada 2 horas, quitamos las ofertas que ya terminaron y te mostramos cuánto ahorras en cada una.</p>
+    <p>Explora por categoría: ${categories.filter((c) => c.deals.length).map((c) => `<a href="/categoria/${c.slug}/">${c.slug === 'otras' ? 'otras ofertas' : `ofertas en ${e(c.name.toLowerCase())}`}</a>`).join(', ')}.${couponCount ? ` También publicamos los <a href="/cupones/">cupones de Mercado Libre de ${e(monthLabel)}</a> para que ahorres todavía más.` : ''}</p>
+  </section>
 </div>`,
 }));
 
 // ---------- categories ----------
+// One line per category with the words people search for, shown under the category title.
+const CATEGORY_COPY = {
+  celulares: 'Celulares y smartphones de Samsung, Motorola, Xiaomi, Apple y más, además de tablets, fundas, cargadores y accesorios con descuento.',
+  computacion: 'Laptops, monitores, teclados, mouse, discos SSD, impresoras y accesorios de computación a precio rebajado.',
+  electronica: 'Audífonos, bocinas, pantallas, smart TV, cámaras, smartwatches y más electrónica con descuento.',
+  videojuegos: 'Consolas, controles, juegos y accesorios gamer para PlayStation, Xbox y Nintendo en oferta.',
+  electrodomesticos: 'Freidoras de aire, licuadoras, cafeteras, microondas, refrigeradores y todo para tu cocina con descuento.',
+  hogar: 'Muebles, colchones, organización, iluminación, aspiradoras y decoración para tu casa a mejor precio.',
+  belleza: 'Perfumes, maquillaje, cuidado de la piel, secadoras y planchas para el cabello en oferta.',
+  deportes: 'Bicicletas, pesas, ropa deportiva, suplementos y equipo para entrenar con descuento.',
+  salud: 'Vitaminas, suplementos, equipo médico y productos de bienestar a precio rebajado.',
+  herramientas: 'Taladros, kits de herramientas, soldadoras, llaves de impacto y todo para construcción en oferta.',
+  juguetes: 'Juguetes, juegos de mesa, LEGO y artículos para bebé con descuento.',
+  mascotas: 'Alimento, arena, juguetes y accesorios para perros y gatos en oferta.',
+  autos: 'Accesorios para auto y moto, cargadores de batería, herramientas y refacciones con descuento.',
+  moda: 'Tenis, ropa, mochilas, relojes y accesorios con descuento.',
+  despensa: 'Café, bebidas, botanas y despensa a mejor precio.',
+  libros: 'Libros, papelería, arte, música e instrumentos musicales en oferta.',
+};
 for (const c of categories) {
   const maxOff = c.deals[0]?.discount ?? 0;
   write(`/categoria/${c.slug}/`, layout({
-    title: `Ofertas en ${c.name} en Mercado Libre`,
-    description: `${c.deals.length} ofertas en ${c.name.toLowerCase()}${maxOff ? ` con hasta ${maxOff}% de descuento` : ''} en Mercado Libre ${market.name}. Precios actualizados varias veces al día.`,
+    title: `Ofertas en ${c.name}${maxOff ? `: hasta ${maxOff}% de descuento` : ''} (${monthLabel})`,
+    description: clip(`${c.deals.length} ofertas en ${c.name.toLowerCase()} en Mercado Libre ${market.name}${maxOff ? ` con hasta ${maxOff}% de descuento` : ''}: ${c.deals.slice(0, 2).map((d) => clip(d.title, 45)).join(', ')} y más. Actualizado cada 2 horas.`, 300),
     pathname: `/categoria/${c.slug}/`,
     jsonld: [breadcrumbs([['Inicio', '/'], [c.name, `/categoria/${c.slug}/`]]), itemList(c.deals)],
     body: `<div class="wrap">
   <nav class="crumbs" aria-label="Ruta"><a href="/">Inicio</a><span>›</span><span>${e(c.name)}</span></nav>
-  <header class="page-head"><h1>${c.emoji} Ofertas en ${e(c.name)}</h1><p class="lead">${c.deals.length ? `${c.deals.length} ofertas activas${maxOff ? `, con descuentos de hasta ${maxOff}%` : ''}.` : 'Ahora mismo no hay ofertas en esta categoría.'} Revisamos Mercado Libre ${e(market.name)} automáticamente y solo mostramos productos con descuento real frente a su precio anterior.</p></header>
+  <header class="page-head"><h1>${c.emoji} Ofertas en ${e(c.name)}</h1><p class="lead">${c.deals.length ? `${c.deals.length} ofertas activas${maxOff ? `, con descuentos de hasta ${maxOff}%` : ''}.` : 'Ahora mismo no hay ofertas en esta categoría.'} Revisamos Mercado Libre ${e(market.name)} automáticamente y solo mostramos productos con descuento real frente a su precio anterior.</p>${CATEGORY_COPY[c.slug] ? `<p class="cat-copy">${CATEGORY_COPY[c.slug]}</p>` : ''}</header>
   ${chips(c.slug)}
   <section class="section">${grid(c.deals)}</section>
 </div>`,
@@ -241,7 +278,7 @@ for (const d of deals) {
   const shareText = `${d.discount ? `🔥 -${d.discount}% ` : ''}${d.title} por ${price(d.price)}${d.originalPrice ? ` (antes ${price(d.originalPrice)})` : ''}`;
   const pageUrl = abs(d.page);
   write(d.page, layout({
-    title: `${d.title}${d.discount ? ` con ${d.discount}% de descuento` : ''}`,
+    title: `${clip(d.title, 60)}${d.discount ? ` con ${d.discount}% de descuento` : ''}`,
     description: `${d.title} a ${price(d.price)}${d.originalPrice ? ` (antes ${price(d.originalPrice)}, ahorras ${price(save)})` : ''} en Mercado Libre ${market.name}.${d.freeShipping ? ' Envío gratis.' : ''} Precio visto el ${dateFmt.format(Date.parse(d.lastSeen))}.`,
     pathname: d.page,
     image: d.image,
@@ -283,6 +320,7 @@ for (const d of deals) {
       </div>
     </div>
   </article>
+  ${telegramBanner('pagina-oferta')}
   ${related.length ? `<section class="section"><h2 class="h2">Más ofertas en ${e(cat.name)}</h2><div class="grid">${related.map(card).join('')}</div></section>` : ''}
 </div>`,
   }));
@@ -312,16 +350,17 @@ if (couponPost) {
   const { coupons: cards, notes } = parsedCoupons;
   cards.sort((a, b) => b.featured - a.featured);
   write('/cupones/', layout({
-    title: 'Cupones y códigos de descuento de Mercado Libre',
-    description: `${cards.length ? `${cards.length} códigos de descuento` : 'Cupones'} vigentes para Mercado Libre ${market.name}${until ? ` hasta el ${until}` : ''}.`,
+    title: `Cupones Mercado Libre ${monthLabel}${cards.length ? `: ${cards.length} códigos de descuento` : ''}`,
+    description: clip(`Cupones de Mercado Libre ${market.name} vigentes${until ? ` hasta el ${until}` : ''}${cards.length ? `: ${cards.slice(0, 4).map((c) => `${c.code} (${c.benefit ?? 'descuento'})`).join(', ')}` : ''}. Copia el código y úsalo al pagar.`, 300),
     pathname: '/cupones/',
     body: `<div class="wrap cp-page">
   <header class="cp-hero">
-    <h1>🎟️ Cupones</h1>
+    <h1>🎟️ Cupones de Mercado Libre</h1>
     <p class="lead">Copia un código y pégalo al pagar en Mercado Libre.${until ? ` <b>Válidos hasta el ${e(until)}.</b>` : ''}</p>
   </header>
   ${cards.length ? `<div class="ticket-grid">${cards.map(ticket).join('')}</div>` : `<div class="coupon"><div class="coupon-text"><p>${linkify(couponText)}</p></div></div>`}
   ${notes.map((n) => `<p class="cp-note">ℹ️ ${e(n)}.</p>`).join('')}
+  ${telegramBanner('cupones')}
   <ol class="cp-steps"><li><b>Toca un código</b> para copiarlo.</li><li><b>Agrega tus productos</b> al carrito en Mercado Libre.</li><li>Al pagar, en <b>“Agregar cupón”</b>, pega el código.</li></ol>
   <p class="cp-cta"><a class="btn btn-xl" href="${e(couponPost.url ? tagMlLinks(couponPost.url) : COUPONS_URL)}" ${buyAttrs} data-umami-event="ir-a-mercadolibre" data-umami-event-lugar="cupones">Ir a Mercado Libre</a></p>
   <p class="muted cp-fine">Cada cupón aplica solo en productos participantes y puede agotarse antes de su fecha. Algunos cupones son personales: revisa también <a href="${e(COUPONS_URL)}" ${buyAttrs}>tus cupones en Mercado Libre</a>.</p>
@@ -459,6 +498,7 @@ ${sitemapPaths.map((p) => `<url><loc>${abs(p)}</loc><lastmod>${lastmod}</lastmod
 </urlset>
 `);
 write('robots.txt', SAMPLE ? 'User-agent: *\nDisallow: /\n' : `User-agent: *\nAllow: /\nDisallow: /compartir/\nDisallow: /enlaces/\nDisallow: /publicar/\n\nSitemap: ${abs('/sitemap.xml')}\n`);
+if (config.indexNowKey) write(`${config.indexNowKey}.txt`, config.indexNowKey);
 write('version.json', JSON.stringify({ buildId, updatedAt: lastmod, active: active.length }));
 write('.nojekyll', '');
 

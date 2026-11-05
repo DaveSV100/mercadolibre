@@ -175,6 +175,17 @@ svg { width: 1em; height: 1em; flex: none; }
 .share .btn.share-wa, .share a.share-wa:hover { background: #1fa855; border-color: #1fa855; color: #fff; }
 .share a.share-tg:hover { background: #229ed9; border-color: #229ed9; color: #fff; }
 
+.tg-banner { display: flex; align-items: center; gap: 14px; margin: 18px 0; padding: 14px 16px; border-radius: 16px; background: linear-gradient(135deg, #229ed9, #1b7fc4); color: #fff; box-shadow: var(--shadow); }
+.tg-icon { display: grid; place-items: center; flex: none; width: 44px; height: 44px; border-radius: 50%; background: rgb(255 255 255 / 18%); }
+.tg-icon svg { width: 24px; height: 24px; }
+.tg-text { display: grid; gap: 2px; min-width: 0; flex: 1; }
+.tg-text b { font-size: 16px; }
+.tg-text span { font-size: 14px; opacity: .9; }
+.tg-btn { flex: none; padding: 10px 18px; border-radius: 999px; background: #fff; color: #1b7fc4; font-weight: 800; text-decoration: none; }
+.seo-text { margin: 8px 0 48px; padding: 20px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+.seo-text h2 { margin: 0 0 8px; font-size: 18px; color: var(--text); }
+.seo-text a { color: var(--text); }
+.cat-copy { color: var(--muted); margin: 8px 0 0; max-width: 760px; }
 .coupon-btn { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; padding: 7px 12px; border-radius: 999px; border: 1px dashed #E5252A; color: #E5252A; font-size: 14px; font-weight: 700; text-decoration: none; white-space: nowrap; }
 .coupon-btn small { background: #E5252A; color: #fff; border-radius: 999px; padding: 0 7px; font-size: 12px; }
 .top-nav + .coupon-btn { margin-left: 0; }
@@ -266,6 +277,9 @@ svg { width: 1em; height: 1em; flex: none; }
   .coupon-btn + .join { margin-left: 0; }
   .cp-row { grid-template-columns: 1fr; }
   .ticket-grid { grid-template-columns: 1fr; gap: 12px; }
+  .tg-banner { flex-wrap: wrap; gap: 10px 12px; padding: 14px; }
+  .tg-text { flex-basis: calc(100% - 60px); }
+  .tg-btn { width: 100%; text-align: center; }
   .ticket-amount { font-size: 36px; }
   .top .join a { padding: 8px; font-size: 0; gap: 0; }
   .top .join svg { width: 18px; height: 18px; }

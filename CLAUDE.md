@@ -34,3 +34,8 @@ builds or the owner pages (`track: false`). Clicks are tracked with `data-umami-
 (prop `lugar`, `producto`), `copiar-cupon` (prop `codigo`), `unirse-telegram`, `compartir-whatsapp/telegram`. Entering
 the owner code sets `umami.disabled` so the owner's own visits aren't counted. `test/build.test.mjs` fails if a page
 disappears from the build.
+
+SEO: titles/descriptions include the month (`monthLabel`), category pages have `CATEGORY_COPY`, the home page ends with a
+short `.seo-text` block. `telegramBanner(lugar)` appears on home, deal and coupons pages. `scripts/indexnow.mjs` runs after
+each deploy and notifies Bing via IndexNow (key `indexNowKey`, published as /<key>.txt); sent deal pages are remembered in
+`data/indexnow.json`.
