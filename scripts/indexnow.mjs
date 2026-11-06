@@ -20,6 +20,14 @@ const main = ['/', '/cupones/', ...ALL_CATEGORIES.filter((c) => usedCategories.h
 const fresh = deals.map(dealPath).filter((p) => !already.has(p));
 const urlList = [...main, ...fresh].map((p) => config.baseUrl + p).slice(0, 10000);
 
+// Bing verifies the site by downloading the key file; report whether it is reachable over https.
+try {
+  const check = await fetch(`${config.baseUrl}/${config.indexNowKey}.txt`, { signal: AbortSignal.timeout(15000) });
+  console.log(`Key file ${config.baseUrl}/${config.indexNowKey}.txt -> HTTP ${check.status}`);
+} catch (err) {
+  console.warn(`! Key file not reachable over ${new URL(config.baseUrl).protocol} (${err.cause?.code ?? err.message}). Is HTTPS enabled for the domain?`);
+}
+
 try {
   const res = await fetch('https://api.indexnow.org/indexnow', {
     method: 'POST',
