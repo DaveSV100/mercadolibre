@@ -13,7 +13,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 201.29
   },
   {
@@ -30,7 +30,7 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-11-15T17:09:31.979Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 385
   },
   {
@@ -47,7 +47,7 @@
     "category": "autos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 137.44
   },
   {
@@ -64,7 +64,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 698
   },
   {
@@ -81,7 +81,7 @@
     "category": "videojuegos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 574
   },
   {
@@ -98,7 +98,7 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 88.23
   },
   {
@@ -115,7 +115,7 @@
     "category": "moda",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 375.13
   },
   {
@@ -132,8 +132,25 @@
     "category": "celulares",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 104.23
+  },
+  {
+    "id": "MLM76454494",
+    "title": "Soldadora inverter portatil inversores soldadoras inversor para soldar wanse",
+    "url": "https://www.mercadolibre.com.mx/p/MLM76454494",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_915171-MLA114342672820_082026-F.jpg",
+    "price": 492.22,
+    "originalPrice": 1587.8,
+    "discount": 69,
+    "currency": "MXN",
+    "freeShipping": true,
+    "lightning": false,
+    "category": "herramientas",
+    "source": "api",
+    "firstSeen": "2026-11-08T16:39:57.408Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 480
   },
   {
     "id": "MLM74981499",
@@ -149,7 +166,7 @@
     "category": "electronica",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 174
   },
   {
@@ -166,7 +183,7 @@
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 71.3
   },
   {
@@ -183,7 +200,7 @@
     "category": "computacion",
     "source": "api",
     "firstSeen": "2026-11-15T17:09:31.979Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1289
   },
   {
@@ -200,7 +217,7 @@
     "category": "moda",
     "source": "api",
     "firstSeen": "2026-11-15T17:09:31.979Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 287.67
   },
   {
@@ -217,7 +234,7 @@
     "category": "autos",
     "source": "api",
     "firstSeen": "2026-10-31T05:40:01.536Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 611.65
   },
   {
@@ -234,7 +251,7 @@
     "category": "electronica",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 131
   },
   {
@@ -251,7 +268,7 @@
     "category": "hogar",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 179.14
   },
   {
@@ -268,7 +285,7 @@
     "category": "moda",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 287.8
   },
   {
@@ -285,7 +302,7 @@
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-11-07T16:26:12.372Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 49.47
   },
   {
@@ -302,7 +319,7 @@
     "category": "otras",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 74.25
   },
   {
@@ -319,25 +336,25 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 95.3
   },
   {
-    "id": "MLM69763254",
-    "title": "Hidrolavadora Eléctrica Portátil Y Inalámbrica Pistola a presion de agua Hidro lavadora auto drive con 2 Baterias",
-    "url": "https://www.mercadolibre.com.mx/p/MLM69763254",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_807752-MLA110825991582_052026-F.jpg",
-    "price": 358,
-    "originalPrice": 999,
-    "discount": 64,
+    "id": "MLM22207427",
+    "title": "Crema Hidratante Tono Uniforme Express Aclara FPS30 50 ml Garnier",
+    "url": "https://www.mercadolibre.com.mx/p/MLM22207427",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_621019-MLA92986905862_092025-F.jpg",
+    "price": 62,
+    "originalPrice": 175,
+    "discount": 65,
     "currency": "MXN",
     "freeShipping": true,
-    "lightning": false,
-    "category": "herramientas",
+    "lightning": true,
+    "category": "belleza",
     "source": "api",
-    "firstSeen": "2026-11-12T18:19:13.281Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 298
+    "firstSeen": "2026-11-14T20:42:45.781Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 62
   },
   {
     "id": "MLM67329478",
@@ -353,7 +370,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 298.4
   },
   {
@@ -366,11 +383,11 @@
     "discount": 64,
     "currency": "MXN",
     "freeShipping": false,
-    "lightning": true,
+    "lightning": false,
     "category": "electronica",
     "source": "api",
     "firstSeen": "2026-10-31T23:23:51.409Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 289.99
   },
   {
@@ -378,7 +395,7 @@
     "title": "Hidrolavadora eléctrica portátil y inalámbrica Ironhoof XBMXF015BK negro de 550W con 680psi de presión máxima",
     "url": "https://www.mercadolibre.com.mx/p/MLM27954436",
     "image": "https://http2.mlstatic.com/D_NQ_NP_966505-MLA118332489602_102026-F.jpg",
-    "price": 295,
+    "price": 298,
     "originalPrice": 799,
     "discount": 63,
     "currency": "MXN",
@@ -387,7 +404,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 263.67
   },
   {
@@ -404,7 +421,7 @@
     "category": "autos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 612.47
   },
   {
@@ -421,7 +438,7 @@
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 207.28
   },
   {
@@ -438,7 +455,7 @@
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 130.31
   },
   {
@@ -446,7 +463,7 @@
     "title": "Hidrolavadora Electrica Portátil 1600 Psi 1200w Alta Presion Amarillo 60hz Trent Para Lavar Carros",
     "url": "https://www.mercadolibre.com.mx/p/MLM53177027",
     "image": "https://http2.mlstatic.com/D_NQ_NP_745863-MLA121535071811_112026-F.jpg",
-    "price": 873,
+    "price": 864.05,
     "originalPrice": 2299,
     "discount": 62,
     "currency": "MXN",
@@ -455,7 +472,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 859
   },
   {
@@ -472,8 +489,25 @@
     "category": "otras",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 158.27
+  },
+  {
+    "id": "MLM54490268",
+    "title": "Trampolin Para Niños Infantil Coolsht Brinconlin 1.40 Metros Rojo",
+    "url": "https://www.mercadolibre.com.mx/p/MLM54490268",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_622763-MLA99471128976_112025-F.jpg",
+    "price": 689,
+    "originalPrice": 1799,
+    "discount": 62,
+    "currency": "MXN",
+    "freeShipping": true,
+    "lightning": true,
+    "category": "juguetes",
+    "source": "api",
+    "firstSeen": "2026-10-29T14:21:23.966Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 689
   },
   {
     "id": "MLM22998638",
@@ -485,12 +519,29 @@
     "discount": 61,
     "currency": "MXN",
     "freeShipping": false,
-    "lightning": false,
+    "lightning": true,
     "category": "electronica",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 116.99
+  },
+  {
+    "id": "MLM69763254",
+    "title": "Hidrolavadora Eléctrica Portátil Y Inalámbrica Pistola a presion de agua Hidro lavadora auto drive con 2 Baterias",
+    "url": "https://www.mercadolibre.com.mx/p/MLM69763254",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_807752-MLA110825991582_052026-F.jpg",
+    "price": 398,
+    "originalPrice": 999,
+    "discount": 60,
+    "currency": "MXN",
+    "freeShipping": true,
+    "lightning": false,
+    "category": "herramientas",
+    "source": "api",
+    "firstSeen": "2026-11-12T18:19:13.281Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 298
   },
   {
     "id": "MLM18586406",
@@ -506,7 +557,7 @@
     "category": "moda",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 290.01
   },
   {
@@ -523,7 +574,7 @@
     "category": "videojuegos",
     "source": "api",
     "firstSeen": "2026-10-31T05:40:01.536Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 484
   },
   {
@@ -531,17 +582,17 @@
     "title": "Gel de limpieza CeraVe Gel De Limpeza Facial día/noche para piel normal a grasa de 454g 18+ años",
     "url": "https://www.mercadolibre.com.mx/p/MLM26194700",
     "image": "https://http2.mlstatic.com/D_NQ_NP_627187-MLA120755118791_112026-F.jpg",
-    "price": 241,
+    "price": 240,
     "originalPrice": 599,
     "discount": 60,
     "currency": "MXN",
     "freeShipping": false,
-    "lightning": false,
+    "lightning": true,
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-10-30T01:06:05.435Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 241
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 240
   },
   {
     "id": "MLM53225198",
@@ -557,7 +608,7 @@
     "category": "electronica",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 226.03
   },
   {
@@ -574,25 +625,8 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 262.98
-  },
-  {
-    "id": "MLM54490268",
-    "title": "Trampolin Para Niños Infantil Coolsht Brinconlin 1.40 Metros Rojo",
-    "url": "https://www.mercadolibre.com.mx/p/MLM54490268",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_622763-MLA99471128976_112025-F.jpg",
-    "price": 739,
-    "originalPrice": 1799,
-    "discount": 59,
-    "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "juguetes",
-    "source": "api",
-    "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 739
   },
   {
     "id": "MLM37027043",
@@ -608,25 +642,8 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-11-13T09:30:21.073Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 61.09
-  },
-  {
-    "id": "MLM22207427",
-    "title": "Crema Hidratante Tono Uniforme Express Aclara FPS30 50 ml Garnier",
-    "url": "https://www.mercadolibre.com.mx/p/MLM22207427",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_621019-MLA92986905862_092025-F.jpg",
-    "price": 71.75,
-    "originalPrice": 175,
-    "discount": 59,
-    "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "belleza",
-    "source": "api",
-    "firstSeen": "2026-11-14T20:42:45.781Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 71.75
   },
   {
     "id": "MLM46491788",
@@ -642,7 +659,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-11-03T16:14:33.014Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 383.69
   },
   {
@@ -659,7 +676,7 @@
     "category": "deportes",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 209
   },
   {
@@ -676,7 +693,7 @@
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-11-13T09:30:21.073Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 478.11
   },
   {
@@ -693,7 +710,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 272.13
   },
   {
@@ -710,7 +727,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-11-06T15:55:52.661Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 149.21
   },
   {
@@ -727,7 +744,7 @@
     "category": "otras",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 113.69
   },
   {
@@ -744,7 +761,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 198
   },
   {
@@ -757,11 +774,11 @@
     "discount": 57,
     "currency": "MXN",
     "freeShipping": true,
-    "lightning": false,
+    "lightning": true,
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 149.33
   },
   {
@@ -778,7 +795,7 @@
     "category": "electronica",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 339.65
   },
   {
@@ -795,8 +812,25 @@
     "category": "computacion",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1077.85
+  },
+  {
+    "id": "MLM81246938",
+    "title": "Set de Juego Barbie Casa con Resbaladilla",
+    "url": "https://www.mercadolibre.com.mx/p/MLM81246938",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_918403-MLA120424208679_102026-F.jpg",
+    "price": 1500,
+    "originalPrice": 3499,
+    "discount": 57,
+    "currency": "MXN",
+    "freeShipping": true,
+    "lightning": false,
+    "category": "juguetes",
+    "source": "api",
+    "firstSeen": "2026-11-12T18:19:13.281Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 1500
   },
   {
     "id": "MLM64358647",
@@ -812,7 +846,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 265.44
   },
   {
@@ -829,7 +863,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 544.77
   },
   {
@@ -846,7 +880,7 @@
     "category": "hogar",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 175
   },
   {
@@ -863,8 +897,25 @@
     "category": "mascotas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 212.43
+  },
+  {
+    "id": "MLM38955373",
+    "title": "Mini Drone Con Cámara Cuadricoptero Control Remoto Y Estuche Color Gris Kwala",
+    "url": "https://www.mercadolibre.com.mx/p/MLM38955373",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_858993-MLA100084458061_122025-F.jpg",
+    "price": 222.13,
+    "originalPrice": 500,
+    "discount": 56,
+    "currency": "MXN",
+    "freeShipping": false,
+    "lightning": false,
+    "category": "electronica",
+    "source": "api",
+    "firstSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 222.13
   },
   {
     "id": "MLM80452580",
@@ -880,7 +931,7 @@
     "category": "hogar",
     "source": "api",
     "firstSeen": "2026-11-11T01:55:39.844Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 223.1
   },
   {
@@ -897,7 +948,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T23:56:40.206Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 79
   },
   {
@@ -914,7 +965,7 @@
     "category": "electronica",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 250
   },
   {
@@ -931,25 +982,8 @@
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 104
-  },
-  {
-    "id": "MLM81246938",
-    "title": "Set de Juego Barbie Casa con Resbaladilla",
-    "url": "https://www.mercadolibre.com.mx/p/MLM81246938",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_918403-MLA120424208679_102026-F.jpg",
-    "price": 1612.17,
-    "originalPrice": 3499,
-    "discount": 54,
-    "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "juguetes",
-    "source": "api",
-    "firstSeen": "2026-11-12T18:19:13.281Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 1500
   },
   {
     "id": "MLM45938973",
@@ -965,7 +999,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 365.31
   },
   {
@@ -982,7 +1016,7 @@
     "category": "salud",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 182.46
   },
   {
@@ -999,7 +1033,7 @@
     "category": "deportes",
     "source": "api",
     "firstSeen": "2026-11-05T18:00:28.181Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 454.41
   },
   {
@@ -1007,16 +1041,16 @@
     "title": "Mesa Plegable Verona Blanca HDPE Loomber",
     "url": "https://www.mercadolibre.com.mx/p/MLM45810075",
     "image": "https://http2.mlstatic.com/D_NQ_NP_940841-MLA94738285382_102025-F.jpg",
-    "price": 629,
+    "price": 619,
     "originalPrice": 1359,
     "discount": 54,
     "currency": "MXN",
     "freeShipping": true,
-    "lightning": false,
+    "lightning": true,
     "category": "hogar",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 569
   },
   {
@@ -1033,25 +1067,8 @@
     "category": "hogar",
     "source": "api",
     "firstSeen": "2026-11-09T20:43:02.112Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 495
-  },
-  {
-    "id": "MLM38955373",
-    "title": "Mini Drone Con Cámara Cuadricoptero Control Remoto Y Estuche Color Gris Kwala",
-    "url": "https://www.mercadolibre.com.mx/p/MLM38955373",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_858993-MLA100084458061_122025-F.jpg",
-    "price": 229,
-    "originalPrice": 500,
-    "discount": 54,
-    "currency": "MXN",
-    "freeShipping": false,
-    "lightning": false,
-    "category": "electronica",
-    "source": "api",
-    "firstSeen": "2026-11-15T17:09:31.979Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 229
   },
   {
     "id": "MLM36317452",
@@ -1067,7 +1084,7 @@
     "category": "deportes",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 452
   },
   {
@@ -1084,7 +1101,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 463.37
   },
   {
@@ -1101,7 +1118,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 251.07
   },
   {
@@ -1118,7 +1135,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-11-15T17:09:31.979Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 186.83
   },
   {
@@ -1135,7 +1152,7 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 975.59
   },
   {
@@ -1152,7 +1169,7 @@
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 133
   },
   {
@@ -1169,7 +1186,7 @@
     "category": "hogar",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 629
   },
   {
@@ -1186,7 +1203,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 573
   },
   {
@@ -1203,7 +1220,7 @@
     "category": "electronica",
     "source": "api",
     "firstSeen": "2026-11-03T16:14:33.014Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 187
   },
   {
@@ -1220,7 +1237,7 @@
     "category": "autos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 277.19
   },
   {
@@ -1237,7 +1254,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 429
   },
   {
@@ -1254,7 +1271,7 @@
     "category": "deportes",
     "source": "api",
     "firstSeen": "2026-11-06T15:55:52.661Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 119
   },
   {
@@ -1271,7 +1288,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 481
   },
   {
@@ -1288,7 +1305,7 @@
     "category": "hogar",
     "source": "api",
     "firstSeen": "2026-11-15T17:09:31.979Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 915.32
   },
   {
@@ -1305,7 +1322,7 @@
     "category": "celulares",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 135.95
   },
   {
@@ -1322,7 +1339,7 @@
     "category": "deportes",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 289
   },
   {
@@ -1339,7 +1356,7 @@
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 124
   },
   {
@@ -1356,7 +1373,7 @@
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 216.09
   },
   {
@@ -1373,7 +1390,7 @@
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-11-13T09:30:21.073Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 554
   },
   {
@@ -1390,7 +1407,7 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-11-15T17:09:31.979Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 87.99
   },
   {
@@ -1407,7 +1424,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 115.06
   },
   {
@@ -1424,7 +1441,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 348.86
   },
   {
@@ -1441,7 +1458,7 @@
     "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-11-08T16:39:57.408Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 209
   },
   {
@@ -1458,7 +1475,7 @@
     "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-11-04T19:44:39.979Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 175
   },
   {
@@ -1475,7 +1492,7 @@
     "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 229.99
   },
   {
@@ -1492,7 +1509,7 @@
     "category": "electronica",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 329
   },
   {
@@ -1509,7 +1526,7 @@
     "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 81.97
   },
   {
@@ -1526,7 +1543,7 @@
     "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 142.8
   },
   {
@@ -1534,16 +1551,16 @@
     "title": "Perfume Rasasi Hawas Kobra Eau De Parfum Amaderado 100ml",
     "url": "https://www.mercadolibre.com.mx/p/MLM57078253",
     "image": "https://http2.mlstatic.com/D_NQ_NP_749870-MLA92967415611_092025-F.jpg",
-    "price": 598,
+    "price": 595,
     "originalPrice": 1150,
     "discount": 48,
     "currency": "MXN",
     "freeShipping": true,
-    "lightning": false,
+    "lightning": true,
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-10-29T19:36:02.369Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 593.01
   },
   {
@@ -1560,7 +1577,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-11-05T18:00:28.181Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 156
   },
   {
@@ -1577,7 +1594,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-11-14T20:42:45.781Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 884
   },
   {
@@ -1594,7 +1611,7 @@
     "category": "hogar",
     "source": "api",
     "firstSeen": "2026-11-11T17:53:37.474Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 158
   },
   {
@@ -1611,8 +1628,25 @@
     "category": "otras",
     "source": "api",
     "firstSeen": "2026-11-13T09:30:21.073Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 224.16
+  },
+  {
+    "id": "MLM67817931",
+    "title": "Maybelline Superlock Gel Para Cejas",
+    "url": "https://www.mercadolibre.com.mx/p/MLM67817931",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_637199-MLA110272689971_042026-F.jpg",
+    "price": 121,
+    "originalPrice": 229,
+    "discount": 47,
+    "currency": "MXN",
+    "freeShipping": false,
+    "lightning": true,
+    "category": "belleza",
+    "source": "api",
+    "firstSeen": "2026-10-29T14:21:23.966Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 120.31
   },
   {
     "id": "MLM60370129",
@@ -1628,7 +1662,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-11-07T16:26:12.372Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 98
   },
   {
@@ -1645,7 +1679,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-11-14T15:03:48.025Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 269
   },
   {
@@ -1662,7 +1696,7 @@
     "category": "despensa",
     "source": "api",
     "firstSeen": "2026-11-14T20:42:45.781Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 611
   },
   {
@@ -1679,7 +1713,7 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-11-12T18:19:13.281Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 54
   },
   {
@@ -1696,8 +1730,25 @@
     "category": "celulares",
     "source": "api",
     "firstSeen": "2026-11-15T17:09:31.979Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 20599
+  },
+  {
+    "id": "MLM54157646",
+    "title": "Guitarra Eléctrica EG001 con Amplificador 5W y Accesorios Naranja",
+    "url": "https://www.mercadolibre.com.mx/p/MLM54157646",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_839369-MLA115948242159_082026-F.jpg",
+    "price": 1569,
+    "originalPrice": 2900,
+    "discount": 46,
+    "currency": "MXN",
+    "freeShipping": true,
+    "lightning": true,
+    "category": "libros",
+    "source": "api",
+    "firstSeen": "2026-10-29T14:21:23.966Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 1545
   },
   {
     "id": "MLM18980915",
@@ -1713,7 +1764,7 @@
     "category": "despensa",
     "source": "api",
     "firstSeen": "2026-11-14T20:42:45.781Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 177.5
   },
   {
@@ -1730,25 +1781,8 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-11-09T09:47:53.370Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 290.59
-  },
-  {
-    "id": "MLM67817931",
-    "title": "Maybelline Superlock Gel Para Cejas",
-    "url": "https://www.mercadolibre.com.mx/p/MLM67817931",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_637199-MLA110272689971_042026-F.jpg",
-    "price": 125.27,
-    "originalPrice": 229,
-    "discount": 45,
-    "currency": "MXN",
-    "freeShipping": false,
-    "lightning": false,
-    "category": "belleza",
-    "source": "api",
-    "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 120.31
   },
   {
     "id": "MLM22619571",
@@ -1764,7 +1798,7 @@
     "category": "videojuegos",
     "source": "api",
     "firstSeen": "2026-11-09T20:43:02.112Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 399
   },
   {
@@ -1781,7 +1815,7 @@
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 66
   },
   {
@@ -1798,7 +1832,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 226.77
   },
   {
@@ -1815,7 +1849,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 117.99
   },
   {
@@ -1832,7 +1866,7 @@
     "category": "autos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 183.15
   },
   {
@@ -1849,7 +1883,7 @@
     "category": "despensa",
     "source": "api",
     "firstSeen": "2026-11-15T17:09:31.979Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 152.47
   },
   {
@@ -1866,25 +1900,59 @@
     "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-11-15T17:09:31.979Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 163
   },
   {
-    "id": "MLM54157646",
-    "title": "Guitarra Eléctrica EG001 con Amplificador 5W y Accesorios Naranja",
-    "url": "https://www.mercadolibre.com.mx/p/MLM54157646",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_839369-MLA115948242159_082026-F.jpg",
-    "price": 1620.33,
-    "originalPrice": 2900,
-    "discount": 44,
+    "id": "MLM19531552",
+    "title": "Alimento Purina Dog Chow Perro Adulto Mini Pequeño 7.5 Kg",
+    "url": "https://www.mercadolibre.com.mx/p/MLM19531552",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_756227-MLA99822505845_112025-F.jpg",
+    "price": 250.26,
+    "originalPrice": 459,
+    "discount": 45,
+    "currency": "MXN",
+    "freeShipping": false,
+    "lightning": true,
+    "category": "mascotas",
+    "source": "api",
+    "firstSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 250.26
+  },
+  {
+    "id": "MLM23611312",
+    "title": "Impresora Multifunción HP Smart Tank 585 con Tinta Continua y Wi-Fi",
+    "url": "https://www.mercadolibre.com.mx/p/MLM23611312",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_915327-MLA112387372897_052026-F.jpg",
+    "price": 3114,
+    "originalPrice": 5695,
+    "discount": 45,
     "currency": "MXN",
     "freeShipping": true,
     "lightning": false,
-    "category": "libros",
+    "category": "electronica",
+    "source": "api",
+    "firstSeen": "2026-11-06T06:42:51.986Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 3059.1
+  },
+  {
+    "id": "MLM18439163",
+    "title": "Horno de microondas Mirage Mwd020e Color Plata 0.7 Ft3 Espejo",
+    "url": "https://www.mercadolibre.com.mx/p/MLM18439163",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_944928-MLA112812361117_062026-F.jpg",
+    "price": 1370.92,
+    "originalPrice": 2490,
+    "discount": 45,
+    "currency": "MXN",
+    "freeShipping": true,
+    "lightning": false,
+    "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 1545
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 1332
   },
   {
     "id": "MLM42380617",
@@ -1900,7 +1968,7 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1007.1
   },
   {
@@ -1917,7 +1985,7 @@
     "category": "salud",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 279
   },
   {
@@ -1934,7 +2002,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-11-13T17:44:34.663Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 448
   },
   {
@@ -1951,25 +2019,42 @@
     "category": "videojuegos",
     "source": "api",
     "firstSeen": "2026-11-15T01:54:36.234Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 770
   },
   {
-    "id": "MLM19531552",
-    "title": "Alimento Purina Dog Chow Perro Adulto Mini Pequeño 7.5 Kg",
-    "url": "https://www.mercadolibre.com.mx/p/MLM19531552",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_756227-MLA99822505845_112025-F.jpg",
-    "price": 258,
-    "originalPrice": 459,
+    "id": "MLM63710492",
+    "title": "Garnier Hidratante Facial Toque Seco Anti-imperfecciones con Vitamina C, Ácido Salicílico y Niacinamida, Efecto Mate 8h,Ideal para Piel Grasa, reduce imperfecciones, 85g.",
+    "url": "https://www.mercadolibre.com.mx/p/MLM63710492",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_609875-MLA103254764953_122025-F.jpg",
+    "price": 67,
+    "originalPrice": 119,
     "discount": 44,
     "currency": "MXN",
-    "freeShipping": false,
+    "freeShipping": true,
     "lightning": false,
-    "category": "mascotas",
+    "category": "belleza",
+    "source": "api",
+    "firstSeen": "2026-10-29T14:21:23.966Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 67
+  },
+  {
+    "id": "MLM45051966",
+    "title": "Freidora Aire Oster 7.5L DiamondForce 10 Programas",
+    "url": "https://www.mercadolibre.com.mx/p/MLM45051966",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_666015-MLA110892202466_052026-F.jpg",
+    "price": 1108,
+    "originalPrice": 1969.03,
+    "discount": 44,
+    "currency": "MXN",
+    "freeShipping": true,
+    "lightning": false,
+    "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-11-15T17:09:31.979Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 258
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 1108
   },
   {
     "id": "MLM53319833",
@@ -1985,7 +2070,7 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 999
   },
   {
@@ -2002,7 +2087,7 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-11-01T18:33:09.647Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 159
   },
   {
@@ -2019,7 +2104,7 @@
     "category": "videojuegos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 124
   },
   {
@@ -2036,7 +2121,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-11-03T16:14:33.014Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 498
   },
   {
@@ -2053,7 +2138,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-11-03T16:14:33.014Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 2849
   },
   {
@@ -2070,8 +2155,25 @@
     "category": "mascotas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 814.8
+  },
+  {
+    "id": "MLM59117483",
+    "title": "Recipientes Herméticos De Vidrio Almacenamiento Cocina 5 Pz. Transparente",
+    "url": "https://www.mercadolibre.com.mx/p/MLM59117483",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_854143-MLA117870991449_092026-F.jpg",
+    "price": 229,
+    "originalPrice": 399,
+    "discount": 43,
+    "currency": "MXN",
+    "freeShipping": false,
+    "lightning": true,
+    "category": "hogar",
+    "source": "api",
+    "firstSeen": "2026-10-29T14:21:23.966Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 229
   },
   {
     "id": "MLM46469421",
@@ -2087,7 +2189,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 549
   },
   {
@@ -2104,7 +2206,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 251.2
   },
   {
@@ -2121,7 +2223,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 339
   },
   {
@@ -2138,7 +2240,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1287.88
   },
   {
@@ -2155,7 +2257,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 581.03
   },
   {
@@ -2172,25 +2274,25 @@
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-11-09T20:43:02.112Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 126
   },
   {
-    "id": "MLM63710492",
-    "title": "Garnier Hidratante Facial Toque Seco Anti-imperfecciones con Vitamina C, Ácido Salicílico y Niacinamida, Efecto Mate 8h,Ideal para Piel Grasa, reduce imperfecciones, 85g.",
-    "url": "https://www.mercadolibre.com.mx/p/MLM63710492",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_609875-MLA103254764953_122025-F.jpg",
-    "price": 68.87,
-    "originalPrice": 119,
+    "id": "MLM68254703",
+    "title": "Perfume Rasasi Hawas For Him Malibu Edp 100ml",
+    "url": "https://www.mercadolibre.com.mx/p/MLM68254703",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_630055-MLA110564420513_042026-F.jpg",
+    "price": 670.09,
+    "originalPrice": 1150,
     "discount": 42,
     "currency": "MXN",
     "freeShipping": true,
     "lightning": false,
     "category": "belleza",
     "source": "api",
-    "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 68.87
+    "firstSeen": "2026-11-09T20:43:02.112Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 645
   },
   {
     "id": "MLM36318280",
@@ -2206,7 +2308,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 270
   },
   {
@@ -2223,25 +2325,8 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 498
-  },
-  {
-    "id": "MLM76454494",
-    "title": "Soldadora inverter portatil inversores soldadoras inversor para soldar wanse",
-    "url": "https://www.mercadolibre.com.mx/p/MLM76454494",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_915171-MLA114342672820_082026-F.jpg",
-    "price": 535,
-    "originalPrice": 896.45,
-    "discount": 40,
-    "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "herramientas",
-    "source": "api",
-    "firstSeen": "2026-11-08T16:39:57.408Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 480
   },
   {
     "id": "MLM53852189",
@@ -2257,25 +2342,8 @@
     "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 165.82
-  },
-  {
-    "id": "MLM59117483",
-    "title": "Recipientes Herméticos De Vidrio Almacenamiento Cocina 5 Pz. Transparente",
-    "url": "https://www.mercadolibre.com.mx/p/MLM59117483",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_854143-MLA117870991449_092026-F.jpg",
-    "price": 239,
-    "originalPrice": 399,
-    "discount": 40,
-    "currency": "MXN",
-    "freeShipping": false,
-    "lightning": false,
-    "category": "hogar",
-    "source": "api",
-    "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 229
   },
   {
     "id": "MLM28101934",
@@ -2291,7 +2359,7 @@
     "category": "hogar",
     "source": "api",
     "firstSeen": "2026-10-31T12:27:49.874Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 142.51
   },
   {
@@ -2308,7 +2376,7 @@
     "category": "videojuegos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 211.98
   },
   {
@@ -2325,7 +2393,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 600.43
   },
   {
@@ -2342,25 +2410,8 @@
     "category": "salud",
     "source": "api",
     "firstSeen": "2026-10-30T19:21:44.843Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 335
-  },
-  {
-    "id": "MLM53968883",
-    "title": "Epson Ecotank Impresora Multifuncional a Color L4360",
-    "url": "https://www.mercadolibre.com.mx/p/MLM53968883",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_777849-MLA99958240917_112025-F.jpg",
-    "price": 5719,
-    "originalPrice": 9566.64,
-    "discount": 40,
-    "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "electronica",
-    "source": "api",
-    "firstSeen": "2026-11-13T17:44:34.663Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 4499
   },
   {
     "id": "MLM48937856",
@@ -2376,7 +2427,7 @@
     "category": "mascotas",
     "source": "api",
     "firstSeen": "2026-11-12T18:19:13.281Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 852.63
   },
   {
@@ -2393,25 +2444,25 @@
     "category": "hogar",
     "source": "api",
     "firstSeen": "2026-11-14T20:42:45.781Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 116.81
   },
   {
-    "id": "MLM45051966",
-    "title": "Freidora Aire Oster 7.5L DiamondForce 10 Programas",
-    "url": "https://www.mercadolibre.com.mx/p/MLM45051966",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_666015-MLA110892202466_052026-F.jpg",
-    "price": 1190,
-    "originalPrice": 1969.03,
+    "id": "MLM29780185",
+    "title": "Perfume Rasasi Hawas Ice Eau de Parfum 100ml Aromático Amaderado Spray Para Hombre",
+    "url": "https://www.mercadolibre.com.mx/p/MLM29780185",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_778774-MLA92387029804_092025-F.jpg",
+    "price": 687,
+    "originalPrice": 1150,
     "discount": 40,
     "currency": "MXN",
     "freeShipping": true,
-    "lightning": false,
-    "category": "electrodomesticos",
+    "lightning": true,
+    "category": "belleza",
     "source": "api",
-    "firstSeen": "2026-11-15T17:09:31.979Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 1190
+    "firstSeen": "2026-11-12T09:49:20.913Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 687
   },
   {
     "id": "MLM68105809",
@@ -2427,7 +2478,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 581
   },
   {
@@ -2444,7 +2495,7 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 172.9
   },
   {
@@ -2461,7 +2512,7 @@
     "category": "mascotas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 109.94
   },
   {
@@ -2478,7 +2529,7 @@
     "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-10-29T15:21:25.246Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1529
   },
   {
@@ -2495,25 +2546,8 @@
     "category": "deportes",
     "source": "api",
     "firstSeen": "2026-11-08T16:39:57.408Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 675.25
-  },
-  {
-    "id": "MLM23611312",
-    "title": "Impresora Multifunción HP Smart Tank 585 con Tinta Continua y Wi-Fi",
-    "url": "https://www.mercadolibre.com.mx/p/MLM23611312",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_915327-MLA112387372897_052026-F.jpg",
-    "price": 3115.98,
-    "originalPrice": 4999,
-    "discount": 38,
-    "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "electronica",
-    "source": "api",
-    "firstSeen": "2026-11-06T06:42:51.986Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 3059.1
   },
   {
     "id": "MLM67463858",
@@ -2529,7 +2563,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 194
   },
   {
@@ -2546,7 +2580,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 552.38
   },
   {
@@ -2563,7 +2597,7 @@
     "category": "moda",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 75.99
   },
   {
@@ -2580,7 +2614,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-11-13T17:44:34.663Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 153.3
   },
   {
@@ -2597,7 +2631,7 @@
     "category": "electronica",
     "source": "api",
     "firstSeen": "2026-11-08T22:03:54.541Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 190
   },
   {
@@ -2614,7 +2648,7 @@
     "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1191
   },
   {
@@ -2631,7 +2665,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-11-14T20:42:45.781Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 799
   },
   {
@@ -2648,7 +2682,7 @@
     "category": "computacion",
     "source": "api",
     "firstSeen": "2026-11-04T19:44:39.979Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 142.67
   },
   {
@@ -2665,7 +2699,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 568
   },
   {
@@ -2682,7 +2716,7 @@
     "category": "videojuegos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1014.74
   },
   {
@@ -2699,25 +2733,25 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 197.8
   },
   {
-    "id": "MLM19380755",
-    "title": "Fragancia Eau De Toilette Voyage - Nautica - Spray 200ml",
-    "url": "https://www.mercadolibre.com.mx/p/MLM19380755",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_770233-MLA110530513603_042026-F.jpg",
-    "price": 375,
-    "originalPrice": 589,
-    "discount": 36,
+    "id": "MLM37883444",
+    "title": "Pack X12 Paquetes de Toallitas Húmedas Huggies Supreme 80c/uno",
+    "url": "https://www.mercadolibre.com.mx/p/MLM37883444",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_782831-MLA99901852763_112025-F.jpg",
+    "price": 439,
+    "originalPrice": 700,
+    "discount": 37,
     "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "belleza",
+    "freeShipping": false,
+    "lightning": true,
+    "category": "juguetes",
     "source": "api",
-    "firstSeen": "2026-11-05T09:29:11.640Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 310.95
+    "firstSeen": "2026-10-29T14:21:23.966Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 439
   },
   {
     "id": "MLM66207918",
@@ -2733,7 +2767,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 95
   },
   {
@@ -2750,7 +2784,7 @@
     "category": "hogar",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 179
   },
   {
@@ -2767,7 +2801,7 @@
     "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-11-05T18:00:28.181Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1058
   },
   {
@@ -2784,7 +2818,7 @@
     "category": "salud",
     "source": "api",
     "firstSeen": "2026-11-03T06:46:45.076Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1088
   },
   {
@@ -2801,7 +2835,7 @@
     "category": "computacion",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 146.22
   },
   {
@@ -2818,7 +2852,7 @@
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 518.99
   },
   {
@@ -2835,25 +2869,8 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-30T19:21:44.843Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1044.4
-  },
-  {
-    "id": "MLM37883444",
-    "title": "Pack X12 Paquetes de Toallitas Húmedas Huggies Supreme 80c/uno",
-    "url": "https://www.mercadolibre.com.mx/p/MLM37883444",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_782831-MLA99901852763_112025-F.jpg",
-    "price": 453.96,
-    "originalPrice": 700,
-    "discount": 35,
-    "currency": "MXN",
-    "freeShipping": false,
-    "lightning": false,
-    "category": "juguetes",
-    "source": "api",
-    "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 439
   },
   {
     "id": "MLM68190429",
@@ -2869,7 +2886,7 @@
     "category": "autos",
     "source": "api",
     "firstSeen": "2026-11-02T15:38:37.461Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 390.18
   },
   {
@@ -2886,7 +2903,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-11-07T16:26:12.372Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 629
   },
   {
@@ -2903,7 +2920,7 @@
     "category": "hogar",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 258
   },
   {
@@ -2920,7 +2937,7 @@
     "category": "otras",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 87.25
   },
   {
@@ -2937,7 +2954,7 @@
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-10-29T19:36:02.369Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 799
   },
   {
@@ -2954,25 +2971,8 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 358.64
-  },
-  {
-    "id": "MLM74020237",
-    "title": "Coche Montable Niños Buggy Carrito Eléctrico Control Remoto Azul",
-    "url": "https://www.mercadolibre.com.mx/p/MLM74020237",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_669835-MLA119497978133_102026-F.jpg",
-    "price": 1959,
-    "originalPrice": 2999,
-    "discount": 35,
-    "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "juguetes",
-    "source": "api",
-    "firstSeen": "2026-11-11T01:55:39.844Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 1959
   },
   {
     "id": "MLM75366890",
@@ -2988,7 +2988,7 @@
     "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-11-06T15:55:52.661Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1669.84
   },
   {
@@ -3005,7 +3005,7 @@
     "category": "salud",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 328
   },
   {
@@ -3022,7 +3022,7 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-10-30T19:21:44.843Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 324.14
   },
   {
@@ -3039,7 +3039,7 @@
     "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 580
   },
   {
@@ -3047,7 +3047,7 @@
     "title": "Oster Freidora de Aire Digital con Recubrimiento Oster DiamondForce, Ventana y Luz Interna, 4L de Capacidad, con 10 Programas Automáticos, CKSTAF40WDDF",
     "url": "https://www.mercadolibre.com.mx/p/MLM41514595",
     "image": "https://http2.mlstatic.com/D_NQ_NP_934495-MLA80528639594_112024-F.jpg",
-    "price": 948,
+    "price": 948.99,
     "originalPrice": 1436,
     "discount": 34,
     "currency": "MXN",
@@ -3056,7 +3056,7 @@
     "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-10-30T12:54:49.596Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 948
   },
   {
@@ -3073,7 +3073,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 439
   },
   {
@@ -3090,8 +3090,42 @@
     "category": "mascotas",
     "source": "api",
     "firstSeen": "2026-11-15T17:09:31.979Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 182.4
+  },
+  {
+    "id": "MLM79370955",
+    "title": "Michael Myers Máscara Terror Realista Para Halloween",
+    "url": "https://www.mercadolibre.com.mx/p/MLM79370955",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_804280-MLA116671888874_092026-F.jpg",
+    "price": 271.61,
+    "originalPrice": 410.96,
+    "discount": 34,
+    "currency": "MXN",
+    "freeShipping": false,
+    "lightning": false,
+    "category": "otras",
+    "source": "api",
+    "firstSeen": "2026-11-05T18:00:28.181Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 271.61
+  },
+  {
+    "id": "MLM53968883",
+    "title": "Epson Ecotank Impresora Multifuncional a Color L4360",
+    "url": "https://www.mercadolibre.com.mx/p/MLM53968883",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_777849-MLA99958240917_112025-F.jpg",
+    "price": 5715,
+    "originalPrice": 8499,
+    "discount": 33,
+    "currency": "MXN",
+    "freeShipping": true,
+    "lightning": false,
+    "category": "electronica",
+    "source": "api",
+    "firstSeen": "2026-11-13T17:44:34.663Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 4499
   },
   {
     "id": "MLM27278997",
@@ -3107,7 +3141,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-11-08T16:39:57.408Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1861
   },
   {
@@ -3124,7 +3158,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-11-03T16:14:33.014Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 572.99
   },
   {
@@ -3141,7 +3175,7 @@
     "category": "deportes",
     "source": "api",
     "firstSeen": "2026-11-09T09:47:53.370Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 619
   },
   {
@@ -3158,7 +3192,7 @@
     "category": "mascotas",
     "source": "api",
     "firstSeen": "2026-11-06T15:55:52.661Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 192.72
   },
   {
@@ -3175,7 +3209,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 178.98
   },
   {
@@ -3192,7 +3226,7 @@
     "category": "otras",
     "source": "api",
     "firstSeen": "2026-11-13T01:04:21.977Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 619
   },
   {
@@ -3209,25 +3243,8 @@
     "category": "electronica",
     "source": "api",
     "firstSeen": "2026-11-14T20:42:45.781Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 3666
-  },
-  {
-    "id": "MLM18439163",
-    "title": "Horno de microondas Mirage Mwd020e Color Plata 0.7 Ft3 Espejo",
-    "url": "https://www.mercadolibre.com.mx/p/MLM18439163",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_944928-MLA112812361117_062026-F.jpg",
-    "price": 1370.92,
-    "originalPrice": 1963.78,
-    "discount": 30,
-    "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "electrodomesticos",
-    "source": "api",
-    "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 1332
   },
   {
     "id": "MLM28726239",
@@ -3243,7 +3260,7 @@
     "category": "hogar",
     "source": "api",
     "firstSeen": "2026-11-09T20:43:02.112Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 108.46
   },
   {
@@ -3260,7 +3277,7 @@
     "category": "salud",
     "source": "api",
     "firstSeen": "2026-11-11T17:53:37.474Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 268
   },
   {
@@ -3277,7 +3294,7 @@
     "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-11-05T09:29:11.640Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 245
   },
   {
@@ -3294,7 +3311,7 @@
     "category": "otras",
     "source": "api",
     "firstSeen": "2026-11-09T20:43:02.112Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 455
   },
   {
@@ -3311,7 +3328,7 @@
     "category": "computacion",
     "source": "api",
     "firstSeen": "2026-10-29T15:21:25.246Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 2099
   },
   {
@@ -3328,7 +3345,7 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-11-05T18:00:28.181Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 69.3
   },
   {
@@ -3345,7 +3362,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-11-13T09:30:21.073Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 139
   },
   {
@@ -3362,7 +3379,7 @@
     "category": "despensa",
     "source": "api",
     "firstSeen": "2026-11-13T17:44:34.663Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 493.49
   },
   {
@@ -3379,7 +3396,7 @@
     "category": "electronica",
     "source": "api",
     "firstSeen": "2026-11-03T16:14:33.014Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 168.12
   },
   {
@@ -3396,7 +3413,7 @@
     "category": "despensa",
     "source": "api",
     "firstSeen": "2026-11-14T20:42:45.781Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 403.2
   },
   {
@@ -3413,8 +3430,59 @@
     "category": "videojuegos",
     "source": "api",
     "firstSeen": "2026-11-15T01:54:36.234Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1046
+  },
+  {
+    "id": "MLM67290782",
+    "title": "LEGO Editions Cristiano Ronaldo: Fenómenos del Futbol 43012; Juguete de construcción con minifigura del futbolista y un gran CR7; Figura de colección; Regalo para Navidad; 10+",
+    "url": "https://www.mercadolibre.com.mx/p/MLM67290782",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_800455-MLA120429005187_102026-F.jpg",
+    "price": 489,
+    "originalPrice": 699,
+    "discount": 30,
+    "currency": "MXN",
+    "freeShipping": true,
+    "lightning": false,
+    "category": "juguetes",
+    "source": "api",
+    "firstSeen": "2026-11-01T18:33:09.647Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 489
+  },
+  {
+    "id": "MLM17471884",
+    "title": "Parrilla Eléctrica Rca Rc2000n Negro 2 hornallas",
+    "url": "https://www.mercadolibre.com.mx/p/MLM17471884",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_785600-MLA100022269465_122025-F.jpg",
+    "price": 278,
+    "originalPrice": 399,
+    "discount": 30,
+    "currency": "MXN",
+    "freeShipping": false,
+    "lightning": false,
+    "category": "electrodomesticos",
+    "source": "api",
+    "firstSeen": "2026-10-29T14:21:23.966Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 278
+  },
+  {
+    "id": "MLM61772233",
+    "title": "Pizarrón Blanco Magnético de Raganet de 90x60 cm con Accesorios",
+    "url": "https://www.mercadolibre.com.mx/p/MLM61772233",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_878234-MLA110701777192_052026-F.jpg",
+    "price": 279,
+    "originalPrice": 399,
+    "discount": 30,
+    "currency": "MXN",
+    "freeShipping": false,
+    "lightning": true,
+    "category": "juguetes",
+    "source": "api",
+    "firstSeen": "2026-10-29T14:21:23.966Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 279
   },
   {
     "id": "MLM19721946",
@@ -3430,7 +3498,7 @@
     "category": "moda",
     "source": "api",
     "firstSeen": "2026-11-13T09:30:21.073Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 627
   },
   {
@@ -3447,7 +3515,7 @@
     "category": "hogar",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 179.24
   },
   {
@@ -3464,8 +3532,25 @@
     "category": "videojuegos",
     "source": "api",
     "firstSeen": "2026-11-13T23:32:21.376Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1066.03
+  },
+  {
+    "id": "MLM43005484",
+    "title": "Mayonesa Con Jugo De Limones Frasco 1.2 Kg Mccormick",
+    "url": "https://www.mercadolibre.com.mx/p/MLM43005484",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_735018-MLA112948198453_062026-F.jpg",
+    "price": 109.99,
+    "originalPrice": 155.8,
+    "discount": 29,
+    "currency": "MXN",
+    "freeShipping": true,
+    "lightning": false,
+    "category": "despensa",
+    "source": "api",
+    "firstSeen": "2026-10-29T14:21:23.966Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 109.99
   },
   {
     "id": "MLM42012979",
@@ -3481,7 +3566,7 @@
     "category": "despensa",
     "source": "api",
     "firstSeen": "2026-11-07T16:26:12.372Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 70
   },
   {
@@ -3498,7 +3583,7 @@
     "category": "electronica",
     "source": "api",
     "firstSeen": "2026-11-07T16:26:12.372Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 196
   },
   {
@@ -3515,7 +3600,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 479
   },
   {
@@ -3532,25 +3617,8 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 252.17
-  },
-  {
-    "id": "MLM67290782",
-    "title": "LEGO Editions Cristiano Ronaldo: Fenómenos del Futbol 43012; Juguete de construcción con minifigura del futbolista y un gran CR7; Figura de colección; Regalo para Navidad; 10+",
-    "url": "https://www.mercadolibre.com.mx/p/MLM67290782",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_800455-MLA120429005187_102026-F.jpg",
-    "price": 505.22,
-    "originalPrice": 699,
-    "discount": 28,
-    "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "juguetes",
-    "source": "api",
-    "firstSeen": "2026-11-01T18:33:09.647Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 505.14
   },
   {
     "id": "MLM28629779",
@@ -3566,7 +3634,7 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 185.33
   },
   {
@@ -3583,42 +3651,25 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-11-12T09:49:20.913Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 287.05
   },
   {
-    "id": "MLM17471884",
-    "title": "Parrilla Eléctrica Rca Rc2000n Negro 2 hornallas",
-    "url": "https://www.mercadolibre.com.mx/p/MLM17471884",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_785600-MLA100022269465_122025-F.jpg",
-    "price": 287.99,
-    "originalPrice": 399,
-    "discount": 28,
-    "currency": "MXN",
-    "freeShipping": false,
-    "lightning": false,
-    "category": "electrodomesticos",
-    "source": "api",
-    "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 283.88
-  },
-  {
-    "id": "MLM29780185",
-    "title": "Perfume Rasasi Hawas Ice Eau de Parfum 100ml Aromático Amaderado Spray Para Hombre",
-    "url": "https://www.mercadolibre.com.mx/p/MLM29780185",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_778774-MLA92387029804_092025-F.jpg",
-    "price": 688,
-    "originalPrice": 939,
+    "id": "MLM74020237",
+    "title": "Coche Montable Niños Buggy Carrito Eléctrico Control Remoto Azul",
+    "url": "https://www.mercadolibre.com.mx/p/MLM74020237",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_669835-MLA119497978133_102026-F.jpg",
+    "price": 2178.92,
+    "originalPrice": 2999,
     "discount": 27,
     "currency": "MXN",
     "freeShipping": true,
     "lightning": false,
-    "category": "belleza",
+    "category": "juguetes",
     "source": "api",
-    "firstSeen": "2026-11-12T09:49:20.913Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 688
+    "firstSeen": "2026-11-11T01:55:39.844Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 1959
   },
   {
     "id": "MLM19846768",
@@ -3634,7 +3685,7 @@
     "category": "otras",
     "source": "api",
     "firstSeen": "2026-10-29T19:36:02.369Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 443
   },
   {
@@ -3651,7 +3702,7 @@
     "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 215.27
   },
   {
@@ -3668,7 +3719,7 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-11-12T18:19:13.281Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 417.99
   },
   {
@@ -3685,8 +3736,25 @@
     "category": "celulares",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 182
+  },
+  {
+    "id": "MLM19541709",
+    "title": "Aceite de Soya Nutrioli 946ml 3 Piezas",
+    "url": "https://www.mercadolibre.com.mx/p/MLM19541709",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_941048-MLA99821721309_112025-F.jpg",
+    "price": 112,
+    "originalPrice": 152.7,
+    "discount": 27,
+    "currency": "MXN",
+    "freeShipping": false,
+    "lightning": false,
+    "category": "despensa",
+    "source": "api",
+    "firstSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 112
   },
   {
     "id": "MLM22299658",
@@ -3702,7 +3770,7 @@
     "category": "belleza",
     "source": "api",
     "firstSeen": "2026-11-12T09:49:20.913Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 467
   },
   {
@@ -3719,7 +3787,7 @@
     "category": "electronica",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 242
   },
   {
@@ -3736,7 +3804,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 234.86
   },
   {
@@ -3753,25 +3821,8 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 258.2
-  },
-  {
-    "id": "MLM61772233",
-    "title": "Pizarrón Blanco Magnético de Raganet de 90x60 cm con Accesorios",
-    "url": "https://www.mercadolibre.com.mx/p/MLM61772233",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_878234-MLA110701777192_052026-F.jpg",
-    "price": 295,
-    "originalPrice": 399,
-    "discount": 26,
-    "currency": "MXN",
-    "freeShipping": false,
-    "lightning": false,
-    "category": "juguetes",
-    "source": "api",
-    "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 279
   },
   {
     "id": "MLM53715897",
@@ -3787,7 +3838,7 @@
     "category": "electrodomesticos",
     "source": "api",
     "firstSeen": "2026-11-05T09:29:11.640Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 295
   },
   {
@@ -3804,7 +3855,7 @@
     "category": "computacion",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1799
   },
   {
@@ -3821,7 +3872,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1099
   },
   {
@@ -3838,25 +3889,8 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 207.2
-  },
-  {
-    "id": "MLM43005484",
-    "title": "Mayonesa Con Jugo De Limones Frasco 1.2 Kg Mccormick",
-    "url": "https://www.mercadolibre.com.mx/p/MLM43005484",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_735018-MLA112948198453_062026-F.jpg",
-    "price": 117.12,
-    "originalPrice": 155.8,
-    "discount": 25,
-    "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "despensa",
-    "source": "api",
-    "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 117.12
   },
   {
     "id": "MLM74460098",
@@ -3872,7 +3906,7 @@
     "category": "autos",
     "source": "api",
     "firstSeen": "2026-10-29T19:36:02.369Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 233.25
   },
   {
@@ -3889,7 +3923,7 @@
     "category": "despensa",
     "source": "api",
     "firstSeen": "2026-11-13T09:30:21.073Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 26.88
   },
   {
@@ -3906,7 +3940,7 @@
     "category": "salud",
     "source": "api",
     "firstSeen": "2026-11-08T16:39:57.408Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 223.25
   },
   {
@@ -3923,7 +3957,7 @@
     "category": "mascotas",
     "source": "api",
     "firstSeen": "2026-11-03T16:14:33.014Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 200
   },
   {
@@ -3940,7 +3974,7 @@
     "category": "computacion",
     "source": "api",
     "firstSeen": "2026-11-07T08:46:53.252Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 292.45
   },
   {
@@ -3957,25 +3991,8 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 425
-  },
-  {
-    "id": "MLM63419742",
-    "title": "Proteína Empower Nutrition Whey Pro en polvo sabor Choco avellana x 2.2kg",
-    "url": "https://www.mercadolibre.com.mx/p/MLM63419742",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_741333-MLA112809204165_062026-F.jpg",
-    "price": 298.99,
-    "originalPrice": 392,
-    "discount": 24,
-    "currency": "MXN",
-    "freeShipping": false,
-    "lightning": false,
-    "category": "salud",
-    "source": "api",
-    "firstSeen": "2026-11-14T06:21:24.618Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 298.99
   },
   {
     "id": "MLM23995388",
@@ -3991,7 +4008,7 @@
     "category": "electronica",
     "source": "api",
     "firstSeen": "2026-11-15T09:24:24.364Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 829
   },
   {
@@ -4008,8 +4025,25 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-11-02T15:38:37.461Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 90
+  },
+  {
+    "id": "MLM75920624",
+    "title": "Extension Electrica Uso Rudo Reforzada 10m Black+decker Naranja",
+    "url": "https://www.mercadolibre.com.mx/p/MLM75920624",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_703783-MLA117029666931_092026-F.jpg",
+    "price": 114,
+    "originalPrice": 149,
+    "discount": 23,
+    "currency": "MXN",
+    "freeShipping": false,
+    "lightning": false,
+    "category": "herramientas",
+    "source": "api",
+    "firstSeen": "2026-11-13T09:30:21.073Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 114
   },
   {
     "id": "MLM28520035",
@@ -4025,7 +4059,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 217.42
   },
   {
@@ -4042,7 +4076,7 @@
     "category": "videojuegos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1456.85
   },
   {
@@ -4059,25 +4093,8 @@
     "category": "mascotas",
     "source": "api",
     "firstSeen": "2026-11-07T08:46:53.252Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 899
-  },
-  {
-    "id": "MLM47290541",
-    "title": "Proteína Suero de leche Unique Nutrition 100% whey en polvo sabor Vainilla x 2.27kg",
-    "url": "https://www.mercadolibre.com.mx/p/MLM47290541",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_874931-MLA112642102137_062026-F.jpg",
-    "price": 298.99,
-    "originalPrice": 384,
-    "discount": 22,
-    "currency": "MXN",
-    "freeShipping": false,
-    "lightning": false,
-    "category": "salud",
-    "source": "api",
-    "firstSeen": "2026-11-13T09:30:21.073Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 298.99
   },
   {
     "id": "MLM61983154",
@@ -4093,7 +4110,7 @@
     "category": "computacion",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 254.95
   },
   {
@@ -4110,7 +4127,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-11-08T08:58:48.015Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 277.1
   },
   {
@@ -4127,7 +4144,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 629
   },
   {
@@ -4144,7 +4161,7 @@
     "category": "electronica",
     "source": "api",
     "firstSeen": "2026-11-12T18:19:13.281Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 189
   },
   {
@@ -4161,7 +4178,7 @@
     "category": "deportes",
     "source": "api",
     "firstSeen": "2026-11-02T15:38:37.461Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 498
   },
   {
@@ -4178,7 +4195,7 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 229
   },
   {
@@ -4195,7 +4212,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-11-07T08:46:53.252Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1199
   },
   {
@@ -4212,25 +4229,8 @@
     "category": "juguetes",
     "source": "api",
     "firstSeen": "2026-11-13T09:30:21.073Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 556.79
-  },
-  {
-    "id": "MLM75920624",
-    "title": "Extension Electrica Uso Rudo Reforzada 10m Black+decker Naranja",
-    "url": "https://www.mercadolibre.com.mx/p/MLM75920624",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_703783-MLA117029666931_092026-F.jpg",
-    "price": 119,
-    "originalPrice": 149,
-    "discount": 20,
-    "currency": "MXN",
-    "freeShipping": false,
-    "lightning": false,
-    "category": "herramientas",
-    "source": "api",
-    "firstSeen": "2026-11-13T09:30:21.073Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 119
   },
   {
     "id": "MLM52235320",
@@ -4246,7 +4246,7 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-11-13T17:44:34.663Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 588.84
   },
   {
@@ -4263,7 +4263,7 @@
     "category": "videojuegos",
     "source": "api",
     "firstSeen": "2026-11-11T01:55:39.844Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1399
   },
   {
@@ -4280,7 +4280,7 @@
     "category": "videojuegos",
     "source": "api",
     "firstSeen": "2026-11-06T15:55:52.661Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 1592.9
   },
   {
@@ -4297,7 +4297,7 @@
     "category": "libros",
     "source": "api",
     "firstSeen": "2026-11-11T09:24:48.191Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 249
   },
   {
@@ -4314,7 +4314,7 @@
     "category": "salud",
     "source": "api",
     "firstSeen": "2026-11-07T16:26:12.372Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 309.72
   },
   {
@@ -4331,7 +4331,7 @@
     "category": "computacion",
     "source": "api",
     "firstSeen": "2026-11-06T15:55:52.661Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 247.32
   },
   {
@@ -4348,7 +4348,7 @@
     "category": "autos",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 543
   },
   {
@@ -4365,8 +4365,263 @@
     "category": "herramientas",
     "source": "api",
     "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
     "lowestPrice": 116.22
+  },
+  {
+    "id": "MLM19380755",
+    "title": "Fragancia Eau De Toilette Voyage - Nautica - Spray 200ml",
+    "url": "https://www.mercadolibre.com.mx/p/MLM19380755",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_770233-MLA110530513603_042026-F.jpg",
+    "price": 370,
+    "originalPrice": 449,
+    "discount": 18,
+    "currency": "MXN",
+    "freeShipping": true,
+    "lightning": false,
+    "category": "belleza",
+    "source": "api",
+    "firstSeen": "2026-11-05T09:29:11.640Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 310.95
+  },
+  {
+    "id": "MLM22845568",
+    "title": "Perfume Lattafa Khamrah eau de parfum 100 ml",
+    "url": "https://www.mercadolibre.com.mx/p/MLM22845568",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_752868-MLA82577790017_022025-F.jpg",
+    "price": 565.51,
+    "originalPrice": 690,
+    "discount": 18,
+    "currency": "MXN",
+    "freeShipping": true,
+    "lightning": false,
+    "category": "belleza",
+    "source": "api",
+    "firstSeen": "2026-10-29T19:36:02.369Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 516
+  },
+  {
+    "id": "MLM68213173",
+    "title": "Licuadora Taurus Granite Ribbon 500w Vidrio 4 Vel Easyfit",
+    "url": "https://www.mercadolibre.com.mx/p/MLM68213173",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_802356-MLA111300587054_052026-F.jpg",
+    "price": 531.6,
+    "originalPrice": 651.3,
+    "discount": 18,
+    "currency": "MXN",
+    "freeShipping": true,
+    "lightning": false,
+    "category": "electrodomesticos",
+    "source": "api",
+    "firstSeen": "2026-11-12T18:19:13.281Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 384.65
+  },
+  {
+    "id": "MLM29542998",
+    "title": "Fumigadora Aspersora Eléctrico/Manual 20lts Hibrido Kawashima Akh20l Color Rojo incluye accesorios",
+    "url": "https://www.mercadolibre.com.mx/p/MLM29542998",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_847828-MLA99887983049_112025-F.jpg",
+    "price": 790.51,
+    "originalPrice": 964.04,
+    "discount": 18,
+    "currency": "MXN",
+    "freeShipping": true,
+    "lightning": false,
+    "category": "herramientas",
+    "source": "api",
+    "firstSeen": "2026-10-29T19:36:02.369Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 712
+  },
+  {
+    "id": "MLM33357554",
+    "title": "Organizador Joyas Estuche Aretes Anillos Alhajero Color Rosa",
+    "url": "https://www.mercadolibre.com.mx/p/MLM33357554",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_978579-MLA99615859950_122025-F.jpg",
+    "price": 72.99,
+    "originalPrice": 89,
+    "discount": 18,
+    "currency": "MXN",
+    "freeShipping": false,
+    "lightning": false,
+    "category": "moda",
+    "source": "api",
+    "firstSeen": "2026-10-29T14:21:23.966Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 72.99
+  },
+  {
+    "id": "MLM53310406",
+    "title": "Peluca Fantasía Negra Larga Ondulada para Eventos y Fiestas",
+    "url": "https://www.mercadolibre.com.mx/p/MLM53310406",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_947706-MLA100083136595_122025-F.jpg",
+    "price": 135,
+    "originalPrice": 165,
+    "discount": 18,
+    "currency": "MXN",
+    "freeShipping": false,
+    "lightning": false,
+    "category": "otras",
+    "source": "api",
+    "firstSeen": "2026-10-29T14:21:23.966Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 135
+  },
+  {
+    "id": "MLM63419742",
+    "title": "Proteína Empower Nutrition Whey Pro en polvo sabor Choco avellana x 2.2kg",
+    "url": "https://www.mercadolibre.com.mx/p/MLM63419742",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_741333-MLA112809204165_062026-F.jpg",
+    "price": 296,
+    "originalPrice": 357.99,
+    "discount": 17,
+    "currency": "MXN",
+    "freeShipping": false,
+    "lightning": false,
+    "category": "salud",
+    "source": "api",
+    "firstSeen": "2026-11-14T06:21:24.618Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 296
+  },
+  {
+    "id": "MLM47290541",
+    "title": "Proteína Suero de leche Unique Nutrition 100% whey en polvo sabor Vainilla x 2.27kg",
+    "url": "https://www.mercadolibre.com.mx/p/MLM47290541",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_874931-MLA112642102137_062026-F.jpg",
+    "price": 296,
+    "originalPrice": 353.99,
+    "discount": 16,
+    "currency": "MXN",
+    "freeShipping": false,
+    "lightning": false,
+    "category": "salud",
+    "source": "api",
+    "firstSeen": "2026-11-13T09:30:21.073Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 296
+  },
+  {
+    "id": "MLM67812467",
+    "title": "Arandano Deshidratado Premier Alta Calidad 1kg",
+    "url": "https://www.mercadolibre.com.mx/p/MLM67812467",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_682700-MLA113638103158_072026-F.jpg",
+    "price": 118,
+    "originalPrice": 140.98,
+    "discount": 16,
+    "currency": "MXN",
+    "freeShipping": false,
+    "lightning": false,
+    "category": "despensa",
+    "source": "api",
+    "firstSeen": "2026-10-29T14:21:23.966Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 118
+  },
+  {
+    "id": "MLM29397487",
+    "title": "de Dulces Sonrics Piñata Mágica 1.4kg con Rockaleta, Tix Tix, Chokis",
+    "url": "https://www.mercadolibre.com.mx/p/MLM29397487",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_643356-MLA97276879750_112025-F.jpg",
+    "price": 179.88,
+    "originalPrice": 214.25,
+    "discount": 16,
+    "currency": "MXN",
+    "freeShipping": true,
+    "lightning": false,
+    "category": "despensa",
+    "source": "api",
+    "firstSeen": "2026-11-12T18:19:13.281Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 179.88
+  },
+  {
+    "id": "MLM57089314",
+    "title": "Digital Medidor De Glucosa 50 Tiras Y 50 Lancetas Color Azul Azul",
+    "url": "https://www.mercadolibre.com.mx/p/MLM57089314",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_660237-MLA98833827724_112025-F.jpg",
+    "price": 334.32,
+    "originalPrice": 398,
+    "discount": 16,
+    "currency": "MXN",
+    "freeShipping": true,
+    "lightning": false,
+    "category": "salud",
+    "source": "api",
+    "firstSeen": "2026-11-15T17:09:31.979Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 334.32
+  },
+  {
+    "id": "MLM24912841",
+    "title": "Aparato Para Checar La Presion Tensiometro Digital Checador Color Blanco-bw-3205",
+    "url": "https://www.mercadolibre.com.mx/p/MLM24912841",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_989366-MLU70679043153_072023-F.jpg",
+    "price": 178.5,
+    "originalPrice": 210,
+    "discount": 15,
+    "currency": "MXN",
+    "freeShipping": true,
+    "lightning": false,
+    "category": "salud",
+    "source": "api",
+    "firstSeen": "2026-10-31T18:33:44.339Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 178.5
+  },
+  {
+    "id": "MLM68403575",
+    "title": "Trípode para Celular Extensible de 170 cm con Control Bluetooth, Rotación 360° y Rosca 1/4",
+    "url": "https://www.mercadolibre.com.mx/p/MLM68403575",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_601436-MLA109845093552_042026-F.jpg",
+    "price": 218.18,
+    "originalPrice": 256.66,
+    "discount": 15,
+    "currency": "MXN",
+    "freeShipping": false,
+    "lightning": false,
+    "category": "electronica",
+    "source": "api",
+    "firstSeen": "2026-10-29T14:21:23.966Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 206.36
+  },
+  {
+    "id": "MLM32370031",
+    "title": "Micas Térmicas Carta 3 mil 100 Pzas 22.9x29.2 cm Maxseal Brillantes",
+    "url": "https://www.mercadolibre.com.mx/p/MLM32370031",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_726521-MLA99848958683_112025-F.jpg",
+    "price": 158,
+    "originalPrice": 185,
+    "discount": 15,
+    "currency": "MXN",
+    "freeShipping": false,
+    "lightning": false,
+    "category": "libros",
+    "source": "api",
+    "firstSeen": "2026-11-13T09:30:21.073Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 158
+  },
+  {
+    "id": "MLM42613652",
+    "title": "Fular Portabebé Ergonómico, Rebozo Elástico Changuitos Color Azul marino",
+    "url": "https://www.mercadolibre.com.mx/p/MLM42613652",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_886784-MLA99480095806_112025-F.jpg",
+    "price": 253.3,
+    "originalPrice": 298,
+    "discount": 15,
+    "currency": "MXN",
+    "freeShipping": false,
+    "lightning": false,
+    "category": "juguetes",
+    "source": "api",
+    "firstSeen": "2026-11-13T09:30:21.073Z",
+    "lastSeen": "2026-11-15T22:48:17.464Z",
+    "lowestPrice": 253.3
   },
   {
     "id": "MLM19722458",
@@ -4384,227 +4639,6 @@
     "firstSeen": "2026-11-04T19:44:39.979Z",
     "lastSeen": "2026-11-15T17:09:31.979Z",
     "lowestPrice": 296
-  },
-  {
-    "id": "MLM22845568",
-    "title": "Perfume Lattafa Khamrah eau de parfum 100 ml",
-    "url": "https://www.mercadolibre.com.mx/p/MLM22845568",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_752868-MLA82577790017_022025-F.jpg",
-    "price": 565.51,
-    "originalPrice": 690,
-    "discount": 18,
-    "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "belleza",
-    "source": "api",
-    "firstSeen": "2026-10-29T19:36:02.369Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 516
-  },
-  {
-    "id": "MLM68213173",
-    "title": "Licuadora Taurus Granite Ribbon 500w Vidrio 4 Vel Easyfit",
-    "url": "https://www.mercadolibre.com.mx/p/MLM68213173",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_802356-MLA111300587054_052026-F.jpg",
-    "price": 531.6,
-    "originalPrice": 651.3,
-    "discount": 18,
-    "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "electrodomesticos",
-    "source": "api",
-    "firstSeen": "2026-11-12T18:19:13.281Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 384.65
-  },
-  {
-    "id": "MLM29542998",
-    "title": "Fumigadora Aspersora Eléctrico/Manual 20lts Hibrido Kawashima Akh20l Color Rojo incluye accesorios",
-    "url": "https://www.mercadolibre.com.mx/p/MLM29542998",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_847828-MLA99887983049_112025-F.jpg",
-    "price": 790.51,
-    "originalPrice": 964.04,
-    "discount": 18,
-    "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "herramientas",
-    "source": "api",
-    "firstSeen": "2026-10-29T19:36:02.369Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 712
-  },
-  {
-    "id": "MLM33357554",
-    "title": "Organizador Joyas Estuche Aretes Anillos Alhajero Color Rosa",
-    "url": "https://www.mercadolibre.com.mx/p/MLM33357554",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_978579-MLA99615859950_122025-F.jpg",
-    "price": 72.99,
-    "originalPrice": 89,
-    "discount": 18,
-    "currency": "MXN",
-    "freeShipping": false,
-    "lightning": false,
-    "category": "moda",
-    "source": "api",
-    "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 72.99
-  },
-  {
-    "id": "MLM53310406",
-    "title": "Peluca Fantasía Negra Larga Ondulada para Eventos y Fiestas",
-    "url": "https://www.mercadolibre.com.mx/p/MLM53310406",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_947706-MLA100083136595_122025-F.jpg",
-    "price": 135,
-    "originalPrice": 165,
-    "discount": 18,
-    "currency": "MXN",
-    "freeShipping": false,
-    "lightning": false,
-    "category": "otras",
-    "source": "api",
-    "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 135
-  },
-  {
-    "id": "MLM19541709",
-    "title": "Aceite de Soya Nutrioli 946ml 3 Piezas",
-    "url": "https://www.mercadolibre.com.mx/p/MLM19541709",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_941048-MLA99821721309_112025-F.jpg",
-    "price": 126.24,
-    "originalPrice": 152.7,
-    "discount": 17,
-    "currency": "MXN",
-    "freeShipping": false,
-    "lightning": false,
-    "category": "despensa",
-    "source": "api",
-    "firstSeen": "2026-11-15T17:09:31.979Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 126.24
-  },
-  {
-    "id": "MLM67812467",
-    "title": "Arandano Deshidratado Premier Alta Calidad 1kg",
-    "url": "https://www.mercadolibre.com.mx/p/MLM67812467",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_682700-MLA113638103158_072026-F.jpg",
-    "price": 118,
-    "originalPrice": 140.98,
-    "discount": 16,
-    "currency": "MXN",
-    "freeShipping": false,
-    "lightning": false,
-    "category": "despensa",
-    "source": "api",
-    "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 118
-  },
-  {
-    "id": "MLM29397487",
-    "title": "de Dulces Sonrics Piñata Mágica 1.4kg con Rockaleta, Tix Tix, Chokis",
-    "url": "https://www.mercadolibre.com.mx/p/MLM29397487",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_643356-MLA97276879750_112025-F.jpg",
-    "price": 179.88,
-    "originalPrice": 214.25,
-    "discount": 16,
-    "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "despensa",
-    "source": "api",
-    "firstSeen": "2026-11-12T18:19:13.281Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 179.88
-  },
-  {
-    "id": "MLM57089314",
-    "title": "Digital Medidor De Glucosa 50 Tiras Y 50 Lancetas Color Azul Azul",
-    "url": "https://www.mercadolibre.com.mx/p/MLM57089314",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_660237-MLA98833827724_112025-F.jpg",
-    "price": 334.32,
-    "originalPrice": 398,
-    "discount": 16,
-    "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "salud",
-    "source": "api",
-    "firstSeen": "2026-11-15T17:09:31.979Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 334.32
-  },
-  {
-    "id": "MLM24912841",
-    "title": "Aparato Para Checar La Presion Tensiometro Digital Checador Color Blanco-bw-3205",
-    "url": "https://www.mercadolibre.com.mx/p/MLM24912841",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_989366-MLU70679043153_072023-F.jpg",
-    "price": 178.5,
-    "originalPrice": 210,
-    "discount": 15,
-    "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "salud",
-    "source": "api",
-    "firstSeen": "2026-10-31T18:33:44.339Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 178.5
-  },
-  {
-    "id": "MLM68403575",
-    "title": "Trípode para Celular Extensible de 170 cm con Control Bluetooth, Rotación 360° y Rosca 1/4",
-    "url": "https://www.mercadolibre.com.mx/p/MLM68403575",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_601436-MLA109845093552_042026-F.jpg",
-    "price": 218.18,
-    "originalPrice": 256.66,
-    "discount": 15,
-    "currency": "MXN",
-    "freeShipping": false,
-    "lightning": false,
-    "category": "electronica",
-    "source": "api",
-    "firstSeen": "2026-10-29T14:21:23.966Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 206.36
-  },
-  {
-    "id": "MLM32370031",
-    "title": "Micas Térmicas Carta 3 mil 100 Pzas 22.9x29.2 cm Maxseal Brillantes",
-    "url": "https://www.mercadolibre.com.mx/p/MLM32370031",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_726521-MLA99848958683_112025-F.jpg",
-    "price": 158,
-    "originalPrice": 185,
-    "discount": 15,
-    "currency": "MXN",
-    "freeShipping": false,
-    "lightning": false,
-    "category": "libros",
-    "source": "api",
-    "firstSeen": "2026-11-13T09:30:21.073Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 158
-  },
-  {
-    "id": "MLM42613652",
-    "title": "Fular Portabebé Ergonómico, Rebozo Elástico Changuitos Color Azul marino",
-    "url": "https://www.mercadolibre.com.mx/p/MLM42613652",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_886784-MLA99480095806_112025-F.jpg",
-    "price": 253.3,
-    "originalPrice": 298,
-    "discount": 15,
-    "currency": "MXN",
-    "freeShipping": false,
-    "lightning": false,
-    "category": "juguetes",
-    "source": "api",
-    "firstSeen": "2026-11-13T09:30:21.073Z",
-    "lastSeen": "2026-11-15T17:09:31.979Z",
-    "lowestPrice": 253.3
   },
   {
     "id": "MLM72390922",
@@ -4656,23 +4690,6 @@
     "firstSeen": "2026-11-08T16:39:57.408Z",
     "lastSeen": "2026-11-15T09:24:24.364Z",
     "lowestPrice": 582
-  },
-  {
-    "id": "MLM68254703",
-    "title": "Perfume Rasasi Hawas For Him Malibu Edp 100ml",
-    "url": "https://www.mercadolibre.com.mx/p/MLM68254703",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_630055-MLA110564420513_042026-F.jpg",
-    "price": 705,
-    "originalPrice": 1150,
-    "discount": 39,
-    "currency": "MXN",
-    "freeShipping": true,
-    "lightning": false,
-    "category": "belleza",
-    "source": "api",
-    "firstSeen": "2026-11-09T20:43:02.112Z",
-    "lastSeen": "2026-11-15T09:24:24.364Z",
-    "lowestPrice": 645
   },
   {
     "id": "MLM39274925",
@@ -6169,23 +6186,6 @@
     "firstSeen": "2026-10-29T14:21:23.966Z",
     "lastSeen": "2026-11-10T04:06:44.257Z",
     "lowestPrice": 669
-  },
-  {
-    "id": "MLM79370955",
-    "title": "Michael Myers Máscara Terror Realista Para Halloween",
-    "url": "https://www.mercadolibre.com.mx/p/MLM79370955",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_804280-MLA116671888874_092026-F.jpg",
-    "price": 279.75,
-    "originalPrice": 410.3,
-    "discount": 32,
-    "currency": "MXN",
-    "freeShipping": false,
-    "lightning": false,
-    "category": "otras",
-    "source": "api",
-    "firstSeen": "2026-11-05T18:00:28.181Z",
-    "lastSeen": "2026-11-10T04:06:44.257Z",
-    "lowestPrice": 279.75
   },
   {
     "id": "MLM64628829",
